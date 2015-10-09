@@ -1,0 +1,337 @@
+<p> <br>
+   <br>
+    Calculator <br>
+   <br>
+   <br>
+    </p><div align="center"> <br>
+      <br>
+      Welcome to SCalc! <br>
+      <br>
+       <br>
+      <br>
+      <br>
+      Need Help? <br>
+      <br>
+      <!--First Row--> <br>
+      Factor a Number <br>
+      Simplify a radical <br>
+      <br>
+      Clear <br>
+      BACKSPACE <br>
+      <br>
+      <!--Second row--> <br>
+      7 <br>
+      8 <br>
+      9 <br>
+      x <br>
+      <br>
+      <!--Third Row-->  <br>
+      4 <br>
+      5 <br>
+      6 <br>
+      / <br>
+      <br>
+      <!--Fourth Row--> <br>
+      1 <br>
+      2 <br>
+      3 <br>
+      + <br>
+      <br>
+      <!--Fifth Row--> <br>
+      0 <br>
+      ^ <br>
+      = <br>
+      - <br>
+    </div> <br>
+     <br>
+      var input; <br>
+      var cont; <br>
+      var out = document.getElementById(“out”); <br>
+      var exe = document.getElementById(“execute”); <br>
+      out.focus();<p></p>
+
+<pre><code>  //Inputs
+  //Help
+  var help = function() {
+    window.open("help.html", "", "width=500, height=500");
+  }
+
+  //Add a 0 to the end
+  var add0 = function() {
+    input = out.value + "0";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 1 to the end
+  var add1 = function() {
+    input = out.value + "1";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 2 to the end
+  var add2 = function() {
+    input = out.value + "2";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 3 to the end
+  var add3 = function() {
+    input = out.value + "3";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 4 to the end
+  var add4 = function() {
+    input = out.value + "4";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 5 to the end
+  var add5 = function() {
+   input = out.value + "5";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 6 to the end
+  var add6 = function() {
+    input = out.value + "6";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 7 to the end
+  var add7 = function() {
+    input = out.value + "7";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 8 to the end
+  var add8 = function() {
+    input = out.value + "8";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a 9 to the end
+  var add9 = function() {
+    input = out.value + "9";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a + to the end
+  var addPlus = function() {
+    input = out.value + "+";
+      out.value = input;out.focus();
+  }
+
+  //Add a - to the end
+  var addMinus = function() {
+    input = out.value + "-";
+      out.value = input;
+      out.focus();  
+  }
+
+  //Add a * to the end
+  var addx = function() {
+    input = out.value + "*";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a / to the end
+  var addSlash = function() {
+    input = out.value + "/";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add a ^ to the end
+  var addCaret = function() {
+    input = out.value + "^";
+      out.value = input;
+      out.focus();
+  }
+
+  //Add an F to the front
+  var addF = function() {
+    input = "f " + out.value;
+      out.value = input;
+      out.focus();
+  }
+
+  //Add an R to the front
+  var addR = function() {
+    input = "r " + out.value;
+      out.value = input;
+      out.focus();
+  }
+
+  //Clear Input
+  var CE = function() {
+    input = "";
+      out.value = input;
+      out.focus();
+  }
+
+  //Clear Input
+  var backspace = function() {
+    input = out.value;
+    input = input.substring(0, input.length-1);
+      out.value = input;
+      out.focus();
+  }
+
+  //Finish using enter press
+  out.addEventListener("keypress", function() {
+    if (event.keyCode == 13){
+      exe.click();
+    }
+  });
+
+  var execute = function() {
+  input = out.value;
+    //if statement checks to see that equals sign has been 
+    var input = input.toLowerCase();
+
+    console.log('input = "' + input + '"');
+      //If not, is it a special function?
+        //Extract the first character
+      var specialFunctionYesOrNo = input.substring(0,1);
+      var sf = specialFunctionYesOrNo;
+      //list of all special functions
+      var functionArray = ["f", "r", "d","*", "^", "/", "+", "-"];
+      //Check to see if the first character matches anything in the list
+      for (i = 0; i &lt; functionArray.length; i++) {
+        if (sf === functionArray[i]) {
+          var sfv = true;
+          break;
+        }
+      }
+      //Do the math
+      if (sfv != true) {
+        //If it is just arithmetic
+
+        //Swap carets for js squaring
+        var input = input.replace(/(\d+)\^(\d+)/, "Math.pow($1, $2)");
+
+        //Add open parentheses is neccessary
+        var open = false;
+        var close = false;
+        for (i = 0; i &lt; input.length + 1; i++){
+          var char = input.substring(i, i + 1);
+          if (char === "(") {
+            var open = true;
+          } else if (char === ")") {
+            var close = true;
+          }
+        }
+
+        if(open === true &amp;&amp; close === true) {
+        }else if (open === true &amp;&amp; close === false) {
+          var input = input + ")";
+        } else if (open === false &amp;&amp; close === true) {
+          var input = "(" + input;
+        }
+
+        //Do the actual computations
+        out.value = input + "=" + eval(input);
+        var output = eval(input);
+        console.log(eval(input));
+        var input = output;
+
+      }else if (sfv === true) {
+
+        //Swap carets for js squaring
+        var input = input.replace(/(\d+)\^(\d+)/, "Math.pow($1, $2)");
+
+        //Get rid of special function indicator if not continuation of earlier problem
+        if (sf === "+" || sf === "-" || sf === "*" || sf === "/" || sf === "^"){
+          var input = output + input; 
+          out.value = input + "=" + eval(input);
+        var output = eval(input);
+        console.log(eval(input));
+        }else{
+          var input = input.substring(2)
+
+          //Add open parentheses is neccessary
+          var open = false;
+          var close = false;
+          for (i = 0; i &lt; input.length + 1; i++){
+            var char = input.substring(i, i + 1)
+            if (char === "(") {
+              var open = true;
+            } else if (char === ")") {
+              var close = true;
+            }
+          }
+
+          if(open === true &amp;&amp; close === true) {
+          }else if (open === true &amp;&amp; close === false) {
+            var input = input + ")";
+          } else if (open === false &amp;&amp; close === true) {
+            var input = "(" + input;
+          }
+
+          //If it is a special function
+          switch(sf){
+
+            //What to do if factoring
+            case "f":
+              //Do the actual computations
+                var input = eval(input);
+                var factors = [];
+                for (i = 0; i &lt;= input; i++) {
+                    if (input % i === 0){
+                        factors.push(i);
+                    }
+                }
+
+                out.value = "Factors of " + input + ": " + factors;
+
+                break;
+
+            //What to do if simplifying radicals
+
+            case "r":
+              //Do the actual computations
+              var input = eval(input);
+              for (i = 0; i &lt;= input; i++) {
+                  if (input % i === 0){
+                      if (Math.sqrt(i) % 1 === 0){
+                          var ls = i;
+                      }
+                  }
+              }
+
+              //Closing FOR loop, now printing out results
+              if (input/ls === 1) {
+                out.value = Math.sqrt(ls);
+                var output = Math.sqrt(ls);
+              }else{
+                out.value = Math.sqrt(ls) + "\u221a" + input / ls;
+                var output = Math.sqrt(ls) + "\u221a" + input / ls;
+              }
+              break;
+
+            default:
+              out.value = "Does not compute.";
+          }
+        }
+    }
+    .keypress(
+    CE();
+    out.focus();
+    )
+  }
+</code></pre>
+
+ <br>
+   <br>
