@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>SCalc</title>
+    <link rel="stylesheet" type="text/css" href="SCalc.css">
+  </head>
+  <body>
+    <div align = 'center'>
+      </table>
+      <table style="table-layout:fixed;height: 100%;width:100%;border-spacing:0px;color:#00CCFF; background-color:darkblue; border-color:#00CCFF" id = "mainPanel">
+        <tr>
+          <td colspan = "3" style = "height:20%"><textarea type = "text" id = "area" style="height:100%;width:100%;font-size:48px;text-align: right;color:#00CCFF; background-color:darkblue; border-color:#00CCFF"></textarea></td>
+          <td><button style="height:100%;width:100%;font-size:5vmin;color:#00CCFF; background-color:darkblue; border-color:#00CCFF" onclick="reset()">RESET</button></td>
+        </tr>
+        <tr>
+          <th colspan = "4" style = "height:10%"><input type = "text" id = "out" style="height:100%;width:100%;font-size:48px;color:#00CCFF; background-color:darkblue; border-color:#00CCFF"/></th>
+        </tr>
+        <tr>
+          <td><button style = "font-size:4vmin" onclick="help()">Need Help?</button></td>
+          <td><button style = "font-size:4vmin" onclick="advShow()" id="adv">Show Advanced Panel</button></td>
+          <td><button style = "font-size:4vmin" onclick="CE()">CE</button></td>
+          <td><button style = "font-size:10vmin" onclick="backspace()">&#9224;</button></td>
+        </tr>
+        <tr><!--Second row-->
+          <td><button onclick="adda('7')">7</button></td>
+          <td><button onclick="adda('8')">8</button></td>
+          <td><button onclick="adda('9')">9</button></td>
+          <td><button onclick="adda('*')">x</button></td>
+        </tr>
+        <tr><!--Third Row-->
+          <td><button onclick="adda('4')">4</button></td>
+          <td><button onclick="adda('5')">5</button></td>
+          <td><button onclick="adda('6')">6</button></td>
+          <td><button onclick="adda('/')">/</button></td>
+        </tr>
+        <tr><!--Fourth Row-->
+          <td><button onclick="adda('1')">1</button></td>
+          <td><button onclick="adda('2')">2</button></td>
+          <td><button onclick="adda('3')">3</button></td>
+          <td><button onclick="adda('\n+')">+</button></td>
+        </tr>
+        <tr><!--Fifth Row-->
+          <td><button onclick="adda('.')">.</button></td>
+          <td><button onclick="adda('0')">0</button></td>
+          <td><button onclick="execute()" id = "execute">=</button></td>
+          <td><button onclick="adda('-')">-</button></td>
+        </tr>
+        <tr style = "height: 10%" id = "advPanel">
+          <td><button onclick="adda('^')">^</button></td>
+          <td><button onclick="addb('r')">&#8730;</button></td>
+          <td><button onclick="addb('f')">F</button></td>
+          <td><button onclick="adda('Math.PI')">&#960;</button></td>
+        </tr>
+      </table>
+    </div>
+    <script src = SCalc.js></script>
+  </body>
+</html>
