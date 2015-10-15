@@ -64,7 +64,7 @@ input = out.value;
         case true:
           if (window.location.pathname === "/Calculator/SCalc-Portrait.html"){
           }else{
-            document.write("SCalc-Portrait.html");
+            window.location = "SCalc-Portrait.html";
           }
           break;
           
