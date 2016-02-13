@@ -1,0 +1,200 @@
+* {
+  padding:0px;
+  margin:0px;
+  border: 0px solid black;
+  float:left;
+  font-family:Roboto, sans;
+  background-color:inherit;
+  color:inherit;
+  outline:0;
+}
+
+html {
+  border:0px;
+  height:100%;
+  width: 100%;
+}
+
+.material-icons {
+}
+
+  .material-icons.settings {
+    font-size:20vh;
+    margin-left:2.5vh;
+  }
+  
+  .material-icons.backspace {
+    font-size:20vh;
+    margin-left:2.5vh;
+  }
+
+  body {
+      border:0px;
+      height:100%;
+      width: 100%;
+      background-color:white;
+      color:gray;
+  }
+  
+    #splash {
+      height:100%;
+      width:100%;
+      position:absolute;
+      text-align:center;
+      z-index:10;
+      display:block;
+      color:gray;
+      opacity:1;
+    }
+    
+      #splashImage {
+        position:relative;
+        display:block;
+        left:calc((100vw - 100vh) / 2);
+        height:100%;
+      }
+      
+      .splashButton {
+        display:block;
+        position:absolute;
+        background-color:darkblue;
+        box-shadow: 0px 5px 10px gray;
+        top:75vh;
+        left:40vw;
+        height:15vh;
+        width:40vh;
+        font-size:10vh;
+        border-radius:1vh;
+      }
+  
+    #div1 {
+      height:100%;
+      width:100vh;
+    }
+    
+      .button {
+        height:20%;
+        width: 25%;
+        text-align: center;
+        font-size:16vh;
+        text-overflow:wrap;
+        
+        /*CSS to disable text-selection*/
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      
+        .advFunction {
+          height:calc(20% - 3vh);
+          padding-top:3vh;
+          font-size:4vh;
+          width: 25%;
+          text-align: center;
+          text-overflow:wrap;
+
+          /*CSS to disable text-selection*/
+          -moz-user-select: -moz-none;
+          -khtml-user-select: none;
+          -webkit-user-select: none;
+          -o-user-select: none;
+          user-select: none;
+        }
+  
+        #help {
+          height:calc(20% - 5vh);
+          padding-top:5vh;
+          font-size:8vh;
+        }
+      
+      #equals {
+        
+        height:12vh;
+        width:12vh;
+        z-index:1;
+        margin-left:94vh;
+        margin-top: 84vh;
+        border-radius:50%;
+        background-color:gray;
+        box-shadow: 0px 5px 50px black;
+        
+        position:absolute;
+        text-align:center;
+        font-size:10vh;
+        color:white;
+      }
+      
+    #div2 {
+      height: 100%;
+      width: calc(98vw - 100vh);
+      background-color:darkblue;
+      box-shadow: -10px 0 20px gray;
+    }
+      
+      #output {
+        height:calc(90% - 3px);
+        width:100%;
+        border-bottom:1px solid gray;
+        resize:none;
+        
+        text-align:right;
+        font-size:4vh;
+        color:gray;
+      }
+      
+      #input {
+        height:10%; 
+        width:calc(80% - 7vh);
+        padding-left:7vh;
+        font-size: 3vh;
+      }
+      
+      #reset {
+        height:calc(10% - 2.5vh);
+        width:20%;
+        padding-top:2.5vh;
+        text-align:center;
+        font-size:2.5vw;
+      }
+      
+      .popUp {
+        height:65vh;
+        width:59vh;
+        top: 10vh;
+        left: 12.5vh;
+        padding:5vh 8vh;
+        background-color:white;
+        color:gray;
+        z-index:1;
+        position:absolute;
+        opacity:1;
+        box-shadow: 0px 1px 10px gray;
+        overflow:wrap;
+      }
+        
+        #helpPopUp {
+          display:none;
+        }
+        
+        #settingsPopUp {
+          display:none;
+        }
+        
+        .flatButton {
+          visibility:inherit;
+          height:5%;
+          width:15%;
+          background-color:inherit;
+          color:darkblue;
+          display:block;
+          position:absolute;
+          font-size:2vh;
+        }
+        
+        #closeHelp {
+          margin-top:62vh;
+          margin-left:55vh;
+        }
+/*This commnent exists solely to prevent ACE's "..." bug-->
