@@ -16,11 +16,7 @@ var input = {
 
 //Setup
 setTimeout(function () {closeSplash();}, 2500);
-$('#div1').load('elements/standardKeypad.html', function() {}
-);
 
-$('#div2').load('elements/inputOutput.html', function() {}
-);
 
 inputBox.focus();
 
@@ -143,6 +139,8 @@ inputBox.focus();
     //Spalsh screen
     var closeSplash = function () {
       splash.style.display = "none";
+      $('#div1').load('elements/standardKeypad.html', function() {} );
+      $('#div2').load('elements/inputOutput.html', function() {} );
       inputBox.focus();
     };
     
