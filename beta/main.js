@@ -15,8 +15,13 @@ var input = {
 };
 
 //Setup
-//setTimeout(closeSplash, 4000);
 setTimeout(function () {closeSplash();}, 2500);
+$('#div1').load('elements/standardKeypad.html', function() {}
+);
+
+$('#div2').load('elements/inputOutput.html', function() {}
+);
+
 inputBox.focus();
 
 //Functions
