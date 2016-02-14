@@ -162,14 +162,14 @@ inputBox.focus();
     
     //Show advanced functions panel
     var showAdvancedFunctions = function () {
-      $('#div1').load('keypads/advancedFunctionKeypad.html', function() {
+      $('#div1').load('elements/advancedFunctionKeypad.html', function() {
       });
       
       inputBox.focus();
     };
     
     var hideAdvancedFunctions = function () {
-      $('#div1').load('keypads/standardKeypad.html', function() {
+      $('#div1').load('elements/standardKeypad.html', function() {
       });
       
       inputBox.focus();
