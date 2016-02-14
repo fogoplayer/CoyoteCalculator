@@ -21,12 +21,13 @@ inputBox.focus();
 
 //Functions
   //Hide OS Keyboard on mobile.
-  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  /*var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
     inputBox.addEventListener("focus", function(){
       inputBox.blur();
     });
-  }
+  }*/
+  
   //Execute using enter
   inputBox.addEventListener("keypress", 
     function(event) {
