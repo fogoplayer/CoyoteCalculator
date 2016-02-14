@@ -139,8 +139,8 @@ inputBox.focus();
     //Spalsh screen
     var closeSplash = function () {
       splash.style.display = "none";
-      $('#div1').load('elements/standardKeypad.html', function() {} );
-      $('#div2').load('elements/inputOutput.html', function() {} );
+      //$('#div1').load('elements/standardKeypad.html', function() {} );
+      //$('#div2').load('elements/inputOutput.html', function() {} );
       inputBox.focus();
     };
     
