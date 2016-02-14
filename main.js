@@ -25,9 +25,8 @@ inputBox.focus();
   if (isMobile) {
     inputBox.addEventListener("focus", function(){
       inputBox.blur();
-    };
-    );
-  };
+    });
+  }
   //Execute using enter
   inputBox.addEventListener("keypress", 
     function(event) {
