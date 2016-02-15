@@ -1,4 +1,4 @@
-var version = web.1.0.0
+var version = "web.1.0.0";
 //Variables
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
@@ -18,7 +18,7 @@ var input = {
 
 //Setup
 setTimeout(function () {closeSplash();}, 2500);
-
+console.log(version);
 inputBox.focus();
 
 //Functions
