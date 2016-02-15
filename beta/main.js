@@ -133,7 +133,7 @@ inputBox.focus();
     var closeSplash = function () {
       splash.style.display = "none";
       $('#div1').load('elements/standardKeypad.html', function() {} );
-      $('#div2').load('elements/advancedFunctionKeypad.html', function() {} );
+      $('#div2').load('elements/inputOutput.html', function() {} );
       inputBox.focus();
     };
     
