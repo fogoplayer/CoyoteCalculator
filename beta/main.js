@@ -3,6 +3,7 @@ var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
+var splashImage = document.getElementById("splashImage");
 var output = "";
 var equals = document.getElementById("equals");
 var input = {
@@ -15,8 +16,13 @@ var input = {
 };
 
 //Setup
-setTimeout(function () {closeSplash();}, 2500);
+splashImage.onload = function {
+  setTimeout(function () {closeSplash();}, 2500);
+}
 
+splashImage.onerror = function {
+  setTimeout(function () {closeSplash();}, 2500);
+}
 
 inputBox.focus();
 
