@@ -19,7 +19,7 @@ var input = {
 //Setup
 setTimeout(function () {closeSplash();}, 2500);
 console.log(version);
-//inputBox.focus();
+inputBox.focus();
 
 //Functions
   
