@@ -1,4 +1,5 @@
 //Variables
+var version = "1.2.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -15,6 +16,7 @@ var input = {
 };
 
 //Setup
+console.log(version);
 setTimeout(function () {closeSplash();}, 2500);
 inputBox.focus();
 
