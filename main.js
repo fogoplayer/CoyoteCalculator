@@ -1,10 +1,9 @@
 //Variables
-var version = "1.2.3";
+var version = "web.1.0.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
-var splashImage = document.getElementById("splashImage");
 var output = "";
 var equals = document.getElementById("equals");
 var input = {
@@ -18,10 +17,17 @@ var input = {
 
 //Setup
 setTimeout(function () {closeSplash();}, 2500);
-console.log(version);
+console.log("Version: " + version);
 inputBox.focus();
 
 //Functions
+  //Hide OS Keyboard on mobile.
+  /*var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  if (isMobile) {
+    inputBox.addEventListener("focus", function(){
+      inputBox.blur();
+    });
+  }*/
   
   //Execute using enter
   inputBox.addEventListener("keypress", 
@@ -133,8 +139,6 @@ inputBox.focus();
     //Spalsh screen
     var closeSplash = function () {
       splash.style.display = "none";
-      $('#div1').load('elements/standardKeypad.html', function() {} );
-      $('#div2').load('elements/inputOutput.html', function() {} );
       inputBox.focus();
     };
     
@@ -159,14 +163,14 @@ inputBox.focus();
     
     //Show advanced functions panel
     var showAdvancedFunctions = function () {
-      $('#div1').load('elements/advancedFunctionKeypad.html', function() {
+      $('#div1').load('keypads/advancedFunctionKeypad.html', function() {
       });
       
       inputBox.focus();
     };
     
     var hideAdvancedFunctions = function () {
-      $('#div1').load('elements/standardKeypad.html', function() {
+      $('#div1').load('keypads/standardKeypad.html', function() {
       });
       
       inputBox.focus();
