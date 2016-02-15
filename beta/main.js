@@ -16,13 +16,13 @@ var input = {
 };
 
 //Setup
-/*splashImage.onload = function () {
+splashImage.onload = function () {
   setTimeout(function () {closeSplash();}, 2500);
-}
+};
 
 splashImage.onerror = function () {
   setTimeout(function () {closeSplash();}, 2500);
-}*/
+};
 
 setTimeout(function () {closeSplash();}, 2500);
 
