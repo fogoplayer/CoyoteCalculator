@@ -176,6 +176,6 @@ inputBox.focus();
 
     //Go to Beta mode
     var switchToBeta = function () {
-      window.location = "http://fogoplayer.github.io/sCalc/beta/"
+      window.location = "http://fogoplayer.github.io/sCalc/beta/";
     }
 /*This commnent exists solely to prevent ACE's "..." bug*/
