@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.1.0";
+var version = "web.1.1.1";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -148,7 +148,7 @@ inputBox.focus();
         helpPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#div1').load('helpContent/settingsContent.html', function() {});
+        $('#helpPopup').load('helpContent/settingsContent.html', function() {});
         helpPopUp.style.display = "block";
       }
     };
@@ -159,7 +159,7 @@ inputBox.focus();
         settingsPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#div1').load('popupContent/settingsContent.html', function() {});
+        $('#settingsPopup').load('popupContent/settingsContent.html', function() {});
         settingsPopUp.style.display = "block";
       }
     };
@@ -170,7 +170,7 @@ inputBox.focus();
         changelogPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#div1').load('popupContent/changelogContent.html', function() {});
+        $('#changelogPopup').load('popupContent/changelogContent.html', function() {});
         changelogPopUp.style.display = "block";
       }
     };
