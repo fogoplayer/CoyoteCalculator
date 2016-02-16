@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.1.2";
+var version = "web.1.1.3";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -177,13 +177,13 @@ inputBox.focus();
     
     //Show advanced functions panel
     var showAdvancedFunctions = function () {
-      $('#div1').load('keypads/advancedFunctionKeypad.html', function() {});
+      $('#div1').load('elements/advancedFunctionKeypad.html', function() {});
       
       inputBox.focus();
     };
     
     var hideAdvancedFunctions = function () {
-      $('#div1').load('keypads/standardKeypad.html', function() {});
+      $('#div1').load('elements/standardKeypad.html', function() {});
       
       inputBox.focus();
     };
