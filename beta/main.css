@@ -182,6 +182,10 @@ html {
           display:none;
         }
         
+        #changelogPopup {
+          display:none;
+        }
+        
         .flatButton {
           visibility:inherit;
           height:5%;
