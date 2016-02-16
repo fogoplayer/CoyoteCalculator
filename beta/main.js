@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.0.0";
+var version = "web.1.1.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -148,30 +148,42 @@ inputBox.focus();
         helpPopUp.style.display = "none";
         inputBox.focus();
       }else{
+        $('#div1').load('helpContent/settingsContent.html', function() {});
         helpPopUp.style.display = "block";
       }
     };
     
+    //Settings popup
     var openSettings = function () {
       if (settingsPopUp.style.display === "block") {
         settingsPopUp.style.display = "none";
         inputBox.focus();
       }else{
+        $('#div1').load('popupContent/settingsContent.html', function() {});
         settingsPopUp.style.display = "block";
+      }
+    };
+    
+    //Changelog popup
+    var openChangelog = function () {
+      if (changelogPopUp.style.display === "block") {
+        changelogPopUp.style.display = "none";
+        inputBox.focus();
+      }else{
+        $('#div1').load('popupContent/changelogContent.html', function() {});
+        changelogPopUp.style.display = "block";
       }
     };
     
     //Show advanced functions panel
     var showAdvancedFunctions = function () {
-      $('#div1').load('keypads/advancedFunctionKeypad.html', function() {
-      });
+      $('#div1').load('keypads/advancedFunctionKeypad.html', function() {});
       
       inputBox.focus();
     };
     
     var hideAdvancedFunctions = function () {
-      $('#div1').load('keypads/standardKeypad.html', function() {
-      });
+      $('#div1').load('keypads/standardKeypad.html', function() {});
       
       inputBox.focus();
     };
