@@ -149,6 +149,7 @@ inputBox.focus();
         inputBox.focus();
       }else{
         $('#helpContent').load('popupContent/settingsContent.html', function() {});
+        console.log("Loaded");
         helpPopUp.style.display = "block";
       }
     };
@@ -160,6 +161,7 @@ inputBox.focus();
         inputBox.focus();
       }else{
         $('#settingsContent').load('popupContent/settingsContent.html', function() {});
+        console.log("Loaded");
         settingsPopUp.style.display = "block";
       }
     };
@@ -171,6 +173,7 @@ inputBox.focus();
         inputBox.focus();
       }else{
         $('#changelogContent').load('popupContent/changelogContent.html', function() {});
+        console.log("Loaded");
         changelogPopUp.style.display = "block";
       }
     };
@@ -178,13 +181,11 @@ inputBox.focus();
     //Show advanced functions panel
     var showAdvancedFunctions = function () {
       $('#div1').load('elements/advancedFunctionKeypad.html', function() {});
-      
       inputBox.focus();
     };
     
     var hideAdvancedFunctions = function () {
       $('#div1').load('elements/standardKeypad.html', function() {});
-      
       inputBox.focus();
     };
 
