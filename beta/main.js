@@ -172,7 +172,7 @@ inputBox.focus();
         changelogPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#changelogContent').load('popupContent/changelogContent.html', function() {});
+        $('#div1').load('popupContent/changelogContent.html', function() {});
         console.log("Loaded");
         changelogPopUp.style.display = "block";
       }
