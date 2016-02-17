@@ -148,7 +148,7 @@ inputBox.focus();
         helpPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#helpPopup').load('helpContent/settingsContent.html', function() {});
+        $('#helpContent').load('popupContent/settingsContent.html', function() {});
         helpPopUp.style.display = "block";
       }
     };
@@ -159,7 +159,7 @@ inputBox.focus();
         settingsPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#settingsPopup').load('popupContent/settingsContent.html', function() {});
+        $('#settingsContent').load('popupContent/settingsContent.html', function() {});
         settingsPopUp.style.display = "block";
       }
     };
@@ -170,7 +170,7 @@ inputBox.focus();
         changelogPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#changelogPopup').load('popupContent/changelogContent.html', function() {});
+        $('#changelogContent').load('popupContent/changelogContent.html', function() {});
         changelogPopUp.style.display = "block";
       }
     };
