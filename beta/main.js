@@ -160,7 +160,7 @@ inputBox.focus();
         settingsPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#settingsContent').load('popupContent/settingsContent.html', function() {});
+        $('#div1').load('popupContent/settingsContent.html', function() {});
         console.log("Loaded");
         settingsPopUp.style.display = "block";
       }
@@ -172,7 +172,7 @@ inputBox.focus();
         changelogPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#div1').load('popupContent/changelogContent.html', function() {});
+        $('#changelogContent').load('popupContent/changelogContent.html', function() {});
         console.log("Loaded");
         changelogPopUp.style.display = "block";
       }
