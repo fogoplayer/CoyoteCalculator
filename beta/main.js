@@ -160,7 +160,7 @@ inputBox.focus();
         settingsPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#div1').load('popupContent/settingsContent.html', function() {});
+        $('#settingsContent').load('popupContent/settingsContent.html', function() {});
         console.log("Loaded");
         settingsPopUp.style.display = "block";
       }
