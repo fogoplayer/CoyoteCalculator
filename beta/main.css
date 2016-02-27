@@ -128,7 +128,7 @@ html {
       
     #div2 {
       height: 100%;
-      width: calc(100vw - 100vh);
+      width: calc(100vw - 100vh - 20px);
       background-color:darkblue;
       box-shadow: -10px 0 20px gray;
     }
