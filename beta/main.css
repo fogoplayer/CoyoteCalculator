@@ -187,13 +187,13 @@ html {
         
         .content {
           margin:5vh;
-          height:50vh;
+          height:55vh;
           width:49vh;
           background-color:orange;
         }
         
           ul {
-            margin:5px;
+            left:50px;
           }
         
         .flatButton {
