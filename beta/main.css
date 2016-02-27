@@ -187,10 +187,14 @@ html {
         
         .content {
           margin:5vh;
-          height:20vh;
-          width:20vh;
+          height:50vh;
+          width:49vh;
           background-color:orange;
         }
+        
+          ul {
+            margin:5px;
+          }
         
         .flatButton {
           visibility:inherit;
