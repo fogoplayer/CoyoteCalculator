@@ -164,7 +164,6 @@ html {
         width:59vh;
         top: 10vh;
         left: 12.5vh;
-        padding:5vh 8vh;
         background-color:white;
         color:gray;
         z-index:1;
@@ -184,6 +183,13 @@ html {
         
         #changelogPopUp {
           display:none;
+        }
+        
+        .content {
+          margin:5vh;
+          height:20vh;
+          width:20vh;
+          background-color:orange;
         }
         
         .flatButton {
