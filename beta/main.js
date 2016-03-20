@@ -146,7 +146,6 @@ inputBox.focus();
     var openHelp = function () {
       console.log("Loading helpPopUp")
       if (helpPopUp.style.display === "none") {
-        overlay.style.display = "block";
         helpPopUp.style.display = "block";
         console.log("Loaded helpPopUp");
       }
