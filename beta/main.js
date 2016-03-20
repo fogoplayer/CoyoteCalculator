@@ -144,7 +144,7 @@ inputBox.focus();
     
     //Help dialogue
     var openHelp = function () {
-      console.log("Loading helpPopUp")
+      console.log("Loading helpPopUp. Current status: " + helpPopUp.style.display)
       if (helpPopUp.style.display === "none") {
         helpPopUp.style.display = "block";
         console.log("Loaded helpPopUp");
