@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.02";
+var version = "web.1.2.03";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -144,6 +144,7 @@ inputBox.focus();
     
     //Help dialogue
     var openHelp = function () {
+      console.log("Loading helpPopUp")
       if (helpPopUp.style.display === "none") {
         overlay.style.display = "block";
         helpPopup.style.display = "block";
