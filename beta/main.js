@@ -147,7 +147,7 @@ inputBox.focus();
       console.log("Loading helpPopUp")
       if (helpPopUp.style.display === "none") {
         overlay.style.display = "block";
-        helpPopup.style.display = "block";
+        helpPopUp.style.display = "block";
         console.log("Loaded helpPopUp");
       }
     };
