@@ -149,6 +149,7 @@ inputBox.focus();
         helpPopUp.style.display = "block";
         console.log("Loaded helpPopUp");
       }
+      console.log("Not loading");
     };
     
     //Settings popup
