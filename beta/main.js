@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.01";
+var version = "web.1.2.02";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -150,6 +150,7 @@ inputBox.focus();
       }else{
         $('#helpContent').load('popupContent/helpContent.html', function() {});
         console.log("Loaded");
+        overlay.style.display = "block";
         helpPopUp.style.display = "block";
       }
     };
@@ -162,6 +163,7 @@ inputBox.focus();
       }else{
         $('#settingsContent').load('popupContent/settingsContent.html', function() {});
         console.log("Loaded");
+        overlay.style.display = "block";
         settingsPopUp.style.display = "block";
       }
     };
@@ -174,6 +176,7 @@ inputBox.focus();
       }else{
         $('#changelogContent').load('popupContent/changelogContent.html', function() {});
         console.log("Loaded");
+        overlay.style.display = "block";
         changelogPopUp.style.display = "block";
       }
     };
