@@ -148,7 +148,7 @@ inputBox.focus();
         helpPopUp.style.display = "none";
         inputBox.focus();
       }else{
-        $('#helpContent').load('popupContent/settingsContent.html', function() {});
+        $('#helpContent').load('popupContent/helpContent.html', function() {});
         console.log("Loaded");
         helpPopUp.style.display = "block";
       }
