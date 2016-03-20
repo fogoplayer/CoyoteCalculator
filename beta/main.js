@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.02";
+var version = "web.1.2.01";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -144,41 +144,21 @@ inputBox.focus();
     
     //Help dialogue
     var openHelp = function () {
-      if (helpPopUp.style.display === "block") {
-        overlay.style.display = "none";
-        inputBox.focus();
-      }else{
-        $('#helpContent').load('popupContent/helpContent.html', function() {});
-        console.log("Loaded");
-        overlay.style.display = "block";
-        helpPopUp.style.display = "block";
+      if (helpPopUp.style.display === "none") {
+        helpPopup.style.display = "block";
+        console.log(Loaded helpPopUp);
       }
     };
     
     //Settings popup
     var openSettings = function () {
-      if (settingsPopUp.style.display === "block") {
-        settingsPopUp.style.display = "none";
-        inputBox.focus();
-      }else{
-        $('#settingsContent').load('popupContent/settingsContent.html', function() {});
-        console.log("Loaded");
-        overlay.style.display = "block";
-        settingsPopUp.style.display = "block";
+      
       }
     };
     
     //Changelog popup
     var openChangelog = function () {
-      if (changelogPopUp.style.display === "block") {
-        overlay.style.display = "none";
-        inputBox.focus();
-      }else{
-        $('#changelogContent').load('popupContent/changelogContent.html', function() {});
-        console.log("Loaded");
-        overlay.style.display = "block";
-        changelogPopUp.style.display = "block";
-      }
+      
     };
     
     //Show advanced functions panel
