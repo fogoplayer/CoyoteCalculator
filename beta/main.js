@@ -145,7 +145,7 @@ inputBox.focus();
     //Help dialogue
     var openHelp = function () {
       if (helpPopUp.style.display === "block") {
-        helpPopUp.style.display = "none";
+        overlay.style.display = "none";
         inputBox.focus();
       }else{
         $('#helpContent').load('popupContent/helpContent.html', function() {});
@@ -169,7 +169,7 @@ inputBox.focus();
     //Changelog popup
     var openChangelog = function () {
       if (changelogPopUp.style.display === "block") {
-        changelogPopUp.style.display = "none";
+        overlay.style.display = "none";
         inputBox.focus();
       }else{
         $('#changelogContent').load('popupContent/changelogContent.html', function() {});
