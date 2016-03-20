@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.01";
+var version = "web.1.2.02";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -153,7 +153,6 @@ inputBox.focus();
     //Settings popup
     var openSettings = function () {
       
-      }
     };
     
     //Changelog popup
