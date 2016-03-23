@@ -187,6 +187,15 @@ html {
           margin-top: -6px;
           margin-bottom: 10px;
         }
+        
+      #hamburger {
+        height:100vh;
+        width:calc(100vw - 30vh)
+        position:absolute;
+        left:30vh
+        z-index:1;
+        opacity:0;
+      } 
       
       /*.popUp {
         height:65vh;
