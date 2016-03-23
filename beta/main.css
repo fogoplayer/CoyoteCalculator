@@ -194,7 +194,7 @@ html {
         position:absolute;
         left:30vh;
         z-index:1;
-        opacity:50;
+        opacity:0.5;
         background-color:orange;
       } 
       
