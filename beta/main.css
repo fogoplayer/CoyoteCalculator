@@ -176,6 +176,12 @@ html {
         .hamburgerButton {
           width:auto;
         }
+        
+        hr {
+          width: 100%
+          color:gray;
+          line-height: 1px;
+        }
       
       /*.popUp {
         height:65vh;
