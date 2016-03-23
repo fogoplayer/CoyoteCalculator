@@ -169,6 +169,10 @@ html {
         box-shadow: 10px 0 20px gray;
       }
       
+        .hamburgerIcon {
+          width:100%;
+        }
+      
       /*.popUp {
         height:65vh;
         width:59vh;
