@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.04";
+var version = "web.2.0.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -152,7 +152,7 @@ inputBox.focus();
       console.log("Not loading");
     };
     
-    //Settings popup
+    /*//Settings popup
     var openSettings = function () {
       
     };
@@ -171,6 +171,10 @@ inputBox.focus();
     var hideAdvancedFunctions = function () {
       $('#div1').load('elements/standardKeypad.html', function() {});
       inputBox.focus();
-    };
+    };*/
+    
+    var loadToDiv1 = function (elementID) {
+      $('#div1').load(elementID, function() {});
+    }
 
 /*This commnent exists solely to prevent ACE's "..." bug*/
