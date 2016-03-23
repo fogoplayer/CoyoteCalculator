@@ -190,9 +190,9 @@ html {
         
       #overlay {
         height:100%;
-        width:calc(100vw - 30vh - 20px);
+        width:calc(100vw - 35vh - 20px);
         position:absolute;
-        left:30vh;
+        left:35vh;
         z-index:1;
         opacity:0.5;
         background-color:orange;
