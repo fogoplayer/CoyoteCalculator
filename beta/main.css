@@ -160,7 +160,7 @@ html {
       }
       
       #hamburger {
-        height:100vh;
+        height:calc(100vh - 20px);
         width:30vh;
         padding:2.5vh;
         position:absolute;
@@ -190,7 +190,7 @@ html {
         
       #overlay {
         height:100%;
-        width:calc(100vw - 30vh);
+        width:calc(100vw - 30vh - 20px);
         position:absolute;
         left:30vh;
         z-index:1;
