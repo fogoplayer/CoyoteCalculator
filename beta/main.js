@@ -1,5 +1,5 @@
 //Variables
-var version = "web.2.0.0";
+var version = "web.2.0.1";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
