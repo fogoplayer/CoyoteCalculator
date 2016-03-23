@@ -159,7 +159,14 @@ html {
         font-size:2.5vw;
       }
       
-      .popUp {
+      #hamburger {
+        height:100vh;
+        width:20px;
+        position:absolute;
+        z-index:1;
+      }
+      
+      /*.popUp {
         height:65vh;
         width:59vh;
         top: 10vh;
@@ -210,5 +217,5 @@ html {
         #closeHelp {
           margin-top:62vh;
           margin-left:55vh;
-        }
+        }*/
 /*This commnent exists solely to prevent ACE's "..." bug*/
