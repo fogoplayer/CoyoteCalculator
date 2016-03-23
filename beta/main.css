@@ -175,14 +175,13 @@ html {
         
         .hamburgerButton {
           width:100%;
-          border:1px solid black;
         }
         
         .hr {
           width: 95%
-          font-size: 1px;
+          font-size: 10px;
           color: gray;
-          line-height: 1px;
+          line-height: 10px;
           
           background-color: white;
           margin-top: -6px;
