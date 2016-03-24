@@ -156,8 +156,9 @@ inputBox.focus();
     }
     
     var loadToDiv1 = function (elementID) {
-      $('#div1').load(elementID, function() {});
-      hideHamburger();
+      $('#div1').load(elementID, function() {
+        hideHamburger();
+      });
     }
     
     var switchChannel = function (channel) {
