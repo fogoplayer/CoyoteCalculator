@@ -162,6 +162,7 @@ inputBox.focus();
     var hideHamburger = function() {
       hamburger.style.display = "none";
       overlay.style.display = "none";
+      inputBox.focus();
     }
     
     /*//Settings popup
