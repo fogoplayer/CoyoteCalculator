@@ -144,16 +144,6 @@ inputBox.focus();
       inputBox.focus();
     };
     
-    //Help dialogue
-    var openHelp = function () {
-      console.log("Loading helpPopUp. Current status: " + helpPopUp.style.display + ";")
-      if (helpPopUp.style.display === "none") {
-        helpPopUp.style.display = "block";
-        console.log("Loaded helpPopUp");
-      }
-      console.log("Not loading");
-    };
-    
     var openHamburger = function() {
       hamburger.style.display = "block";
       overlay.style.display = "block";
@@ -165,30 +155,17 @@ inputBox.focus();
       inputBox.focus();
     }
     
-    /*//Settings popup
-    var openSettings = function () {
-      
-    };
-    
-    //Changelog popup
-    var openChangelog = function () {
-      
-    };
-    
-    //Show advanced functions panel
-    var showAdvancedFunctions = function () {
-      $('#div1').load('elements/advancedFunctionKeypad.html', function() {});
-      inputBox.focus();
-    };
-    
-    var hideAdvancedFunctions = function () {
-      $('#div1').load('elements/standardKeypad.html', function() {});
-      inputBox.focus();
-    };*/
-    
     var loadToDiv1 = function (elementID) {
       $('#div1').load(elementID, function() {});
       hideHamburger();
     }
-
+    
+    var switchChannel = function (channel) {
+      if (channel === "stable") {
+        location = "http://fogoplayer.github.io/sCalc/";
+      }else if (channel = "beta") {
+        confirm("WARNING: You are attempting to switch to the Beta channel, which features code that is still in development. Do you still wish to proceed?");
+        location = "http://fogoplayer.github.io/sCalc/beta";
+      }
+    }
 /*This commnent exists solely to prevent ACE's "..." bug*/
