@@ -105,6 +105,8 @@ html {
         }
   
         #openHamburger {
+          height:calc(20vh - 5vh);
+          width:calc(25vh - 5vh);
           padding:2.5vh;
         }
       
