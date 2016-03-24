@@ -6,6 +6,8 @@ var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
 var output = "";
 var equals = document.getElementById("equals");
+var hamburger = document.getElementById("hamburger");
+var overlay = document.getElementById("overlay");
 var input = {
   input:"",
   indicator:"",
@@ -151,6 +153,14 @@ inputBox.focus();
       }
       console.log("Not loading");
     };
+    
+    var openHamburger = function() {
+      hamburger.style.display = "block";
+    }
+    
+    var hideHamburger = function() {
+      hamburger.style.display = "none";
+    }
     
     /*//Settings popup
     var openSettings = function () {
