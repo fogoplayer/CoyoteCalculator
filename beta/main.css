@@ -171,9 +171,7 @@ html {
         }
         
         .hamburgerButton {
-          height:5vh;
-          width:25vh;
-          font-size:2.5vh;
+          margin-top:-5vh;
         }
         
         .hr {
@@ -202,57 +200,5 @@ html {
         width:auto;
         overflow:scroll;
       }
-      
-      /*.popUp {
-        height:65vh;
-        width:59vh;
-        top: 10vh;
-        left: 12.5vh;
-        background-color:white;
-        color:gray;
-        z-index:1;
-        position:absolute;
-        opacity:1;
-        box-shadow: 0px 1px 10px gray;
-        overflow:wrap;
-      }
-        
-        #helpPopUp {
-          display:none;
-        }
-        
-        #settingsPopUp {
-          display:none;
-        }
-        
-        #changelogPopUp {
-          display:none;
-        }
-        
-        .content {
-          margin:5vh;
-          height:55vh;
-          width:49vh;
-          background-color:orange;
-        }
-        
-          ul {
-            left:50px;
-          }
-        
-        .flatButton {
-          visibility:inherit;
-          height:5%;
-          width:15%;
-          background-color:inherit;
-          color:darkblue;
-          display:block;
-          position:absolute;
-          font-size:2vh;
-        }
-        
-        #closeHelp {
-          margin-top:62vh;
-          margin-left:55vh;
-        }*/
+
 /*This commnent exists solely to prevent ACE's "..." bug*/
