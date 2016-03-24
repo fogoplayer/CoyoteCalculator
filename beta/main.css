@@ -104,10 +104,8 @@ html {
           user-select: none;
         }
   
-        #help {
-          height:calc(20% - 5vh);
-          padding-top:5vh;
-          font-size:8vh;
+        #openHamburger {
+          padding:2.5vh;
         }
       
       #equals {
@@ -173,6 +171,7 @@ html {
       
         .hamburgerIcon {
           height:10vh;
+          width:15vh;
         }
         
         .hamburgerButton {
