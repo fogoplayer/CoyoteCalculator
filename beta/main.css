@@ -96,18 +96,16 @@ html {
           text-align: center;
           text-overflow:wrap;
 
-          /*CSS to disable text-selection*/
+          /*CSS to disable text-selection
           -moz-user-select: -moz-none;
           -khtml-user-select: none;
           -webkit-user-select: none;
           -o-user-select: none;
-          user-select: none;
+          user-select: none;*/
         }
   
         #openHamburger {
-          height:calc(20vh - 5vh);
-          width:calc(25vh - 5vh);
-          padding:2.5vh;
+          
         }
       
       #equals {
