@@ -206,6 +206,12 @@ html {
         height:80vh;
         width:100%;
         overflow:scroll;
+        padding:5vh;
+        padding-top:0vh;
       }
+      
+        .versionChanges {
+          margin-left:10px;
+        }
 
 /*This commnent exists solely to prevent ACE's "..." bug*/
