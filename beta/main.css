@@ -166,12 +166,13 @@ html {
       }
       
         .hamburgerIcon {
-          height:10vh;
-          width:15vh;
+          margin-top:-5vh;
         }
         
         .hamburgerButton {
-          margin-top:-5vh;
+          height:5vh;
+          width:25vh;
+          font-size:2.5vh;
         }
         
         .hr {
