@@ -34,7 +34,7 @@ html {
       width: 100%;
       background-color:white;
       color:gray;
-      overflow-y:hidden;
+      overflow:hidden;
   }
   
     #splash {
@@ -123,7 +123,7 @@ html {
       
     #div2 {
       height: 100%;
-      width: calc(100vw - 100vh - 20px);
+      width: calc(100vw - 100vh);
       background-color:darkblue;
       box-shadow: -10px 0 20px gray;
     }
