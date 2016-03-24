@@ -156,10 +156,11 @@ inputBox.focus();
     
     var openHamburger = function() {
       hamburger.style.display = "block";
+      overlay.style.display = "block";
     }
     
     var hideHamburger = function() {
-      hamburger.style.display = "none";
+      overlay.style.display = "none";
     }
     
     /*//Settings popup
