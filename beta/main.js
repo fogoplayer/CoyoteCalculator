@@ -188,6 +188,7 @@ inputBox.focus();
     
     var loadToDiv1 = function (elementID) {
       $('#div1').load(elementID, function() {});
+      hideHamburger();
     }
 
 /*This commnent exists solely to prevent ACE's "..." bug*/
