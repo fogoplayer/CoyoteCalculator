@@ -166,8 +166,8 @@ html {
       }
       
         .hamburgerIcon {
-          margin-top:-2.5vh;
-          margin-left:-2.5vh;
+          /*margin-top:-2.5vh;
+          margin-left:-2.5vh;*/
           height:20vh;
           width:25vh;
         }
