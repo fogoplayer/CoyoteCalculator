@@ -177,6 +177,8 @@ html {
         
         .hamburgerButton {
           height:10vh;
+          width:100%;
+          font-size:5vh;
         }
         
         .hr {
