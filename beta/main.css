@@ -204,7 +204,7 @@ html {
       
       #bodyForNonKeypad {
         height:80vh;
-        width:auto;
+        width:100%;
         overflow:scroll;
       }
 
