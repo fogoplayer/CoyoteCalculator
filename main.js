@@ -1,11 +1,13 @@
 //Variables
-var version = "web.1.0.0";
+var version = "web.2.0.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
 var output = "";
 var equals = document.getElementById("equals");
+var hamburger = document.getElementById("hamburger");
+var overlay = document.getElementById("overlay");
 var input = {
   input:"",
   indicator:"",
@@ -142,38 +144,29 @@ inputBox.focus();
       inputBox.focus();
     };
     
-    //Help dialogue
-    var openHelp = function () {
-      if (helpPopUp.style.display === "block") {
-        helpPopUp.style.display = "none";
-        inputBox.focus();
-      }else{
-        helpPopUp.style.display = "block";
-      }
-    };
+    var openHamburger = function() {
+      hamburger.style.display = "block";
+      overlay.style.display = "block";
+    }
     
-    var openSettings = function () {
-      if (settingsPopUp.style.display === "block") {
-        settingsPopUp.style.display = "none";
-        inputBox.focus();
-      }else{
-        settingsPopUp.style.display = "block";
-      }
-    };
-    
-    //Show advanced functions panel
-    var showAdvancedFunctions = function () {
-      $('#div1').load('keypads/advancedFunctionKeypad.html', function() {
-      });
-      
+    var hideHamburger = function() {
+      hamburger.style.display = "none";
+      overlay.style.display = "none";
       inputBox.focus();
-    };
+    }
     
-    var hideAdvancedFunctions = function () {
-      $('#div1').load('keypads/standardKeypad.html', function() {
+    var loadToDiv1 = function (elementID) {
+      $('#div1').load(elementID, function() {
+        hideHamburger();
       });
-      
-      inputBox.focus();
-    };
-
+    }
+    
+    var switchChannel = function (channel) {
+      if (channel === "stable") {
+        location = "http://fogoplayer.github.io/sCalc/";
+      }else if (channel = "beta") {
+        confirm("WARNING: You are attempting to switch to the Beta channel, which features code that is still in development. Do you still wish to proceed?");
+        location = "http://fogoplayer.github.io/sCalc/beta";
+      }
+    }
 /*This commnent exists solely to prevent ACE's "..." bug*/
