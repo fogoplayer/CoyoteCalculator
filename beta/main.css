@@ -210,8 +210,13 @@ html {
         padding-top:0vh;
       }
       
+        .versionNumber {
+          width:100%;
+        }
+        
         .versionChanges {
-          margin-left:10px;
+          width:100%;
+          padding-left:5vh;
         }
 
 /*This commnent exists solely to prevent ACE's "..." bug*/
