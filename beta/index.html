@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>SCalc</title>
+      <link rel = "stylesheet" type = "text/css" href = "main.css">
+      <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=0B_QvMSQr8UBMWDFIUGZoMENSWFE">
+      <!--Jquery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!--Material Icons-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+  <body>
+    
+    <div id = "splash">
+      <img id = "splashImage" src = "https://drive.google.com/uc?id=0B_QvMSQr8UBMMjBxelVXczFGTUU">
+    </div>
+    
+    <div id = "div1">
+      <div class = "button" id = "openHamburger" onclick = "openHamburger()" >&#8801;</div>
+      <div class = "button"></div>
+      <div class = "button" onclick = "CE()" >CE</div>
+      <div class = "button" id = "backspace" onclick = "backspace()" ><i class="material-icons backspace">&#xE14A;</i></div>
+      
+      <div class = "button" onclick = "addToEnd('7')" >7</div>
+      <div class = "button" onclick = "addToEnd('8')" >8</div>
+      <div class = "button" onclick = "addToEnd('9')" >9</div>
+      <div class = "button" onclick = "addToEnd('*')">&times</div>
+      
+      <div class = "button" onclick = "addToEnd('4')" >4</div>
+      <div class = "button" onclick = "addToEnd('5')" >5</div>
+      <div class = "button" onclick = "addToEnd('6')" >6</div>
+      <div class = "button" onclick = "addToEnd('/')" >&divide;</div>
+      
+      <div class = "button" onclick = "addToEnd('1')" >1</div>
+      <div class = "button" onclick = "addToEnd('2')" >2</div>
+      <div class = "button" onclick = "addToEnd('3')" >3</div>
+      <div class = "button" onclick = "addToEnd('+')" >+</div>
+      
+      <div class = "button" onclick = "addToEnd('.')" >.</div>
+      <div class = "button" onclick = "addToEnd('0')" >0</div>
+      <div class = "button" onclick = "addToEnd('^')">&#708;</div>
+      <div class = "button" onclick = "addToEnd('+')" >-</div>
+    </div>
+      <div id = "equals" onclick = "execute()">=</div>
+    
+    <div id = "div2">
+      <div id = "output"></div>
+      <input id = "input"/>
+      <div id = "reset" onclick = "reset()">RESET</div>
+    </div>
+    
+    <div id = "hamburger">
+      <div class = "button" id = "hamburgerIcon" onclick = "hideHamburger()">&#8801;</div>
+      <p class = "hamburgerButton">SCalc</p>
+      <div class = "hr"></div>
+      <div class = "hamburgerButton" onclick = "loadToDiv1('elements/standardKeypad.html')"><i class="material-icons">looks_one</i> Standard Keypad</div>
+      <div class = "hamburgerButton" onclick = "loadToDiv1('elements/advancedFunctionKeypad.html')"><i class="material-icons">add_circle</i> Advanced Keypad</div>
+      <div class = "hr"></div>
+      <div class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')"><i class="material-icons">help</i> Help</div>
+      <div class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')"><i class="material-icons">&#xE8B8;</i> Settings</div>
+      <div class = "hamburgerButton" onclick = "loadToDiv1('elements/changelog.html')"><i class="material-icons">change_history</i>Changelog</div>
+      <div class = "hamburgerButton" onclick = "switchChannel('stable')"><i class="material-icons">swap_horiz</i> Switch to STABLE</div>
+    </div>
+    <div id = "overlay" onclick = "hideHamburger()"></div>
+    
+  </body>
+<script src = main.js></script>
+</html>
+
+<!--This comment exists solely to prevent ACE's "..." bug-->
