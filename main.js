@@ -160,13 +160,5 @@ inputBox.focus();
         hideHamburger();
       });
     };
-    
-    var switchChannel = function (channel) {
-      if (channel === "stable") {
-        location = "http://fogoplayer.github.io/sCalc/";
-      }else if (channel === "beta") {
-        confirm("WARNING: You are attempting to switch to the Beta channel, which features code that is still in development. Do you still wish to proceed?");
-        location = "http://fogoplayer.github.io/sCalc/beta";
-      }
-    };
+
 /*This commnent exists solely to prevent ACE's "..." bug*/
