@@ -1,5 +1,5 @@
 //Variables
-var version = "web.2.0.0";
+var version = "web.2.1.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -147,19 +147,19 @@ inputBox.focus();
     var openHamburger = function() {
       hamburger.style.display = "block";
       overlay.style.display = "block";
-    }
+    };
     
     var hideHamburger = function() {
       hamburger.style.display = "none";
       overlay.style.display = "none";
       inputBox.focus();
-    }
+    };
     
     var loadToDiv1 = function (elementID) {
       $('#div1').load(elementID, function() {
         hideHamburger();
       });
-    }
+    };
     
     var switchChannel = function (channel) {
       if (channel === "stable") {
@@ -168,5 +168,5 @@ inputBox.focus();
         confirm("WARNING: You are attempting to switch to the Beta channel, which features code that is still in development. Do you still wish to proceed?");
         location = "http://fogoplayer.github.io/sCalc/beta";
       }
-    }
+    };
 /*This commnent exists solely to prevent ACE's "..." bug*/
