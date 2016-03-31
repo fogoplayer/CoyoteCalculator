@@ -150,19 +150,21 @@ html {
       }
       
       #hamburger {
-        height:95vh;
-        width:30vh;
-        padding:2.5vh;
+        height:calc(100vh - 10px);
+        width:275px;
+        min-width:25vh;
+        padding:20px;
         position:absolute;
         z-index:1;
         background-color:white;
         box-shadow: 10px 0 20px gray;
         display:none;
+        overflow:scroll;
       }
       
         #hamburgerIcon {
-          margin-top:-2.5vh;
-          margin-left:-2.5vh;
+          margin-top:-20px;
+          margin-left:-20px;
           height:20vh;
           width: 25vh;
           text-align: center;
@@ -171,29 +173,20 @@ html {
         }
         
         .hamburgerButton {
-          height:5vh;
-          width:25vh;
-          font-size:2.5vh;
-        }
-        
-        .hr {
-          width: 95%
-          font-size: 10px;
-          color: gray;
-          line-height: 10px;
-          
-          background-color: white;
-          margin-top: -6px;
-          margin-bottom: 10px;
+          height:50px;
+          width: calc(275px - 40px);
+          font-size:25px;
+          text-align:left;
         }
         
       #overlay {
         height:100%;
-        width:calc(100vw - 35vh - 20px);
+        width:calc(100vw - 315px);
         position:absolute;
-        left:35vh;
+        left:315px;
         z-index:1;
         opacity:0;
+        background-color:orange;
         display:none;
       } 
       
