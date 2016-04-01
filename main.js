@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.0";
+var version = "web.1.2.1";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -89,14 +89,12 @@ inputBox.focus();
     //Simplify Radicals
     var simpleRad = function () {
       inputValue = eval(input.input);
-      console.log(inputValue);
       for (i = 0; i <= inputValue; i++) {
           //If it is a factor of inputValue
           if (inputValue % i === 0){
             //If it is a whole #
             if (Math.sqrt(i) % 1 === 0){
                 largestSquare = i;
-                console.log(largestSquare);
             }
           }
       }
