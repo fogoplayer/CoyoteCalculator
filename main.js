@@ -122,7 +122,7 @@ inputBox.focus();
     
     //Clears everything
     var reset = function () {
-      CE();
+      CE(); 
       outputBox.innerHTML = "";
       inputBox.focus();
     };
