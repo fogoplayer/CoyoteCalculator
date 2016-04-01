@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.2.1";
+var version = "web.1.3.1";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -59,7 +59,19 @@ inputBox.focus();
   //Math Functions
     //Basic Arithmetic
     var arithmetic = function () {
-      input.output = eval(input.input);
+      var isItAStringCalc = input.input.substring(0,1);
+      if (
+        isItAStringCalc !== "+" &&
+        isItAStringCalc !== "-" &&
+        isItAStringCalc !== "*" &&
+        isItAStringCalc !== "/" &&
+        isItAStringCalc !== "^"  )
+      {
+        input.output = eval(input.input);
+      } else {
+        input.input = input.output + input.input;
+        input.output = eval(input.input);
+      }
     };
     
     //Factoring
