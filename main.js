@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.1.0";
+var version = "web.1.2.0";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -50,8 +50,8 @@ inputBox.focus();
         arithmetic();
         break;
         
-      case "factoring":
-        
+      case "factor":
+        factor();
         break;
       default:
         break;
@@ -98,6 +98,33 @@ inputBox.focus();
     var arithmetic = function () {
       var output = eval(input.input);
       input.output = output;
+    };
+    
+    //Factoring
+    var factor = function() {
+      inputValue = parseFloat(input.input);
+      
+      //List all factors
+      var factors = [];
+      for (i = 0; i <= inputValue; i++) {
+          if (inputValue % i === 0){
+              factors.push(i);
+          }
+      }
+      
+      //Pair factors
+      var factorPairs = [];
+      for (i = 0; i < (factors.length / 2); i++) {
+        var factorPair = " " + factors[i] + " and " + factors[factors.length - i - 1];
+        factorPairs.push(factorPair);
+      }
+      
+      //Prepare for printing
+      input.input = "Factors of " + input.input;
+      input.output = factorPairs;
+      
+      console.log("prepped");
+      
     };
   
   
