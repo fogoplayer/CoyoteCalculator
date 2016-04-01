@@ -18,7 +18,7 @@ var input = {
 };
 
 //Setup
-//setTimeout(function () {closeSplash();}, 4000);
+setTimeout(function () {closeSplash();}, 4000);
 console.log("Version: " + version);
 inputBox.focus();
 
