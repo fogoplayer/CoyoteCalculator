@@ -4,7 +4,7 @@ var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
-var output = "";
+var largestSquare = "";
 var equals = document.getElementById("equals");
 var hamburger = document.getElementById("hamburger");
 var overlay = document.getElementById("overlay");
@@ -23,14 +23,6 @@ console.log("Version: " + version);
 inputBox.focus();
 
 //Functions
-  //Hide OS Keyboard on mobile.
-  /*var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  if (isMobile) {
-    inputBox.addEventListener("focus", function(){
-      inputBox.blur();
-    });
-  }*/
-  
   //Execute using enter
   inputBox.addEventListener("keypress", 
     function(event) {
@@ -44,7 +36,6 @@ inputBox.focus();
   //On Execute
   var execute = function () {
     input.input = inputBox.value;
-    parse();
     switch(input.indicator) {
       case "":
         arithmetic();
@@ -53,6 +44,11 @@ inputBox.focus();
       case "factor":
         factor();
         break;
+        
+      case "simplifyRadical":
+        simpleRad();
+        break;
+        
       default:
         break;
     }
@@ -61,48 +57,14 @@ inputBox.focus();
   };
   
   //Math Functions
-    //Break down formula so that everything can be analyzed later
-    var parse = function () {
-      for (i = 0; i < input.input.length; i++) {
-        if (j === "x") {
-          input.input = input.input.substring(0, i-1) + "*" + input.input.substring(i);
-        }
-        
-        var j = input.input.substring(i, i+1);
-
-        if (j === "(") {
-          input.openParenthesesArray.push(i);
-        }
-        
-        if (j === ")") {
-          input.closeParenthesesArray.push(i);
-        }
-        
-        if (j === "x" || j === "/" || j === "+" || j === "-") {
-          input.operatorArray.push(i);
-        }
-
-        if (j === "^") {
-          if (input.input.substring(i - 1, i) === ")") {
-            for (k = 0; k<=input.openParenthesesArray.length; k++) {
-              if (input.openParenthesesArray[k] > i) {
-                var base = input.substring(k, i - 1);
-              }
-            }
-          }          
-        }
-      }
-    };
-    
     //Basic Arithmetic
     var arithmetic = function () {
-      var output = eval(input.input);
-      input.output = output;
+      input.output = eval(input.input);
     };
     
     //Factoring
     var factor = function() {
-      inputValue = parseFloat(input.input);
+      inputValue = eval(input.input);
       
       //List all factors
       var factors = [];
@@ -122,9 +84,30 @@ inputBox.focus();
       //Prepare for printing
       input.input = "Factors of " + input.input;
       input.output = factorPairs;
+    };
+    
+    //Simplify Radicals
+    var simpleRad = function () {
+      inputValue = eval(input.input);
+      console.log(inputValue);
+      for (i = 0; i <= inputValue; i++) {
+          //If it is a factor of inputValue
+          if (inputValue % i === 0){
+            //If it is a whole #
+            if (Math.sqrt(i) % 1 === 0){
+                largestSquare = i;
+                console.log(largestSquare);
+            }
+          }
+      }
       
-      console.log("prepped");
-      
+      if (inputValue/largestSquare === 1) {
+        input.output = Math.sqrt(largestSquare);
+      }else if (largestSquare === 1) {
+        input.output = "\u221a" + inputValue / largestSquare;
+      }else{
+        input.output = Math.sqrt(largestSquare) + "\u221a" + inputValue / largestSquare;
+      }
     };
   
   
@@ -158,6 +141,7 @@ inputBox.focus();
       inputBox.focus();
     };
     
+    //Print
     var print = function (){
       if (outputBox.innerHTML === "") {
         outputBox.innerHTML = input.input + "=<br>" + input.output;
@@ -166,6 +150,7 @@ inputBox.focus();
       }
       
       CE();
+      input.indicator = "";
     };
     
   //GUI Functions
@@ -175,17 +160,21 @@ inputBox.focus();
       inputBox.focus();
     };
     
+    //Open Hamburger Menu
     var openHamburger = function() {
       hamburger.style.display = "block";
       overlay.style.display = "block";
     };
     
+    //Close Hamburger Menu
     var hideHamburger = function() {
       hamburger.style.display = "none";
       overlay.style.display = "none";
       inputBox.focus();
     };
     
+    //Loads keypads to Div1
+    //May eventually be modified to accept a Div as an argument for increased flexibility.
     var loadToDiv1 = function (elementID) {
       $('#div1').load(elementID, function() {
         hideHamburger();
