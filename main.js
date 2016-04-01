@@ -49,6 +49,10 @@ inputBox.focus();
       case "":
         arithmetic();
         break;
+        
+      case "factoring":
+        
+        break;
       default:
         break;
     }

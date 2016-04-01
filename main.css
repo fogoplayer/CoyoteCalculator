@@ -185,6 +185,7 @@ html {
       
       #bodyForNonKeypad {
         height:80vh;
+        font-size:20px;
         width:100%;
         overflow:scroll;
         padding:7vh;
@@ -193,6 +194,7 @@ html {
       
         .versionNumber {
           width:100%;
+          margin-top:20px;
         }
         
         .versionChanges {
