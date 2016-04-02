@@ -116,14 +116,15 @@ html {
       box-shadow: -10px 0 20px gray;
     }
       
-            #output {
+      #output {
         height:calc(90% - 3px);
         width:calc(100vw - 100vh);
         border-bottom:1px solid gray;
         resize:none;
+        overflow-y:scroll;
         
         text-align:right;
-        font-size:4vh;
+        font-size:5vh;
         color:gray;
       }
       
@@ -131,7 +132,7 @@ html {
         height:10%; 
         width:calc(100% - 27vh);
         padding-left:7vh;
-        font-size: 3vh;
+        font-size: 5vh;
       }
       
       #reset {
@@ -152,7 +153,7 @@ html {
         background-color:white;
         box-shadow: 10px 0 20px gray;
         display:none;
-        overflow:scroll;
+        overflow-y:scroll;
       }
       
         #hamburgerIcon {
