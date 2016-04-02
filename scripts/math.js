@@ -14,6 +14,10 @@ var execute = function () {
       simpleRad();
       break;
       
+    case "algebra":
+      algebra();
+      break;
+      
     default:
       break;
   }
@@ -86,17 +90,11 @@ var simpleRad = function () {
   }
 };
   
-//y=x
-var yx = function(){
+//Determine the type of algebra
+var algebra = function(){
   //Scan equation
-  var x = [];
-  var plus = [];
-  var vert = [];
-  var exp = [];
-  var p = [];
-  var e;
-  for (i = 0; i < input.length; i++) {
-    var char = input.substring(i,i+1);
+  for (i = 0; i < input.input.length; i++) {
+    var char = input.input.substring(i,i+1);
     switch(char){
       case "=":
         e = i;
@@ -123,24 +121,33 @@ var yx = function(){
         break;
     }
   }
-  //Linear
   if (x.length === 1 && vert.length === 0 && exp.length === 0) {
-    var y = input.substring(0,e);
-    var a = input.substring(e + 1, x[0]);
-      if (a === "") {
-        a = 1;
-      }
-    var b = input.substring(x[0] + 1);
-      if (b === "") {
-        b = 0;
-      }
-    area.value = area.value + "\n" + input +"\n" + "x = " + (y-b)/a;
-    area.style.textDecoration= "underline";
-    area.scrollTop = area.scrollHeight;
-    output = (y-b)/a;
-  }else
+    console.log("linear1");
+    linearAlgebra();
+  } else if (x.length !== 0 && vert.length ===  2) {
+    console.log("abs1");
+    absoluteValueAlgebra();
+  }
+};
+
+//Linear
+var linearAlgebra = function () {
+  console.log("linear");
+  var y = input.input.substring(0,e);
+  var a = input.input.substring(e + 1, x[0]);
+    if (a === "") {
+      a = 1;
+    }
+  var b = input.input.substring(x[0] + 1);
+    if (b === "") {
+      b = 0;
+    }
+  input.output = (y-b)/a;
+};
+  
+  
   //Absolute value
-  if (x.length !== 0 && vert.length ===  2) {
+var absoluteValueAlgebra = function () {
     var y = input.substring(0,e);
     var a = input.substring(e + 1, vert[0]);
       if (a === "") {
@@ -190,8 +197,9 @@ var yx = function(){
         area.scrollTop = area.scrollHeight;
       }
     }
-  }else
+}
   //Quadratic
+var quadraticAlgebra = function () {
   if (x.length !== 0 && exp.length !== 0) {
     var y = input.substring(0,e);
     var a = input.substring(e + 1, x[0]);

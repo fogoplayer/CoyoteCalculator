@@ -48,8 +48,19 @@ var backspace = function () {
 
 //Clears current Entry
 var CE = function () {
+  //Reset algebra variables
+  x = [];
+  plus = [];
+  vert = [];
+  exp = [];
+  p = [];
+  e = "";
+  //Reset input object, but not output
   inputBox.value = "";
   input.indicator = "";
+  input.operatorArray = [];
+  input.openParenthesesArray = [];
+  input.closeParenthesesArray = [];
   inputBox.focus();
 };
 
@@ -70,6 +81,7 @@ var print = function (){
   
   CE();
   input.indicator = "";
+  output.scrollTop = 1000000000000000000000;
 };
 
 /*This commnent exists solely to prevent ACE's "..." bug*/

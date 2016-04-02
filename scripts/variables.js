@@ -16,4 +16,12 @@ var input = {
   closeParenthesesArray:[]
 };
 
+//Algebra Variables
+var x = [];
+var plus = [];
+var vert = [];
+var exp = [];
+var p = [];
+var e;
+
 /*This commnent exists solely to prevent ACE's "..." bug*/
