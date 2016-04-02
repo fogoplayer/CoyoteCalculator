@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.3.1";
+var version = "web.1.3.2";
 var helpPopUp = document.getElementById("helpPopUp");
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
@@ -119,7 +119,6 @@ inputBox.focus();
         input.output = Math.sqrt(largestSquare) + "\u221a" + inputValue / largestSquare;
       }
     };
-  
   
   //input functions
     //Adds the clicked-on character to the end of the input string
