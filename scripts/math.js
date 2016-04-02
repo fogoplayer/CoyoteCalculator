@@ -121,19 +121,19 @@ var algebra = function(){
         break;
     }
   }
+  //Find variables that every algorithm uses
+  y = input.input.substring(0,e);
+  
+  
   if (x.length === 1 && vert.length === 0 && exp.length === 0) {
-    console.log("linear1");
     linearAlgebra();
   } else if (x.length !== 0 && vert.length ===  2) {
-    console.log("abs1");
     absoluteValueAlgebra();
   }
 };
 
 //Linear
 var linearAlgebra = function () {
-  console.log("linear");
-  var y = input.input.substring(0,e);
   var a = input.input.substring(e + 1, x[0]);
     if (a === "") {
       a = 1;
@@ -146,59 +146,55 @@ var linearAlgebra = function () {
 };
   
   
-  //Absolute value
+//Absolute value
 var absoluteValueAlgebra = function () {
-    var y = input.substring(0,e);
-    var a = input.substring(e + 1, vert[0]);
+    //Determine variable placement
+    var a = input.input.substring(e + 1, vert[0]);
       if (a === "") {
         a = 1;
       }
-    var a1 = input.substring(vert[0] + 1, x[0]);
+    var a1 = input.input.substring(vert[0] + 1, x[0]);
       if (a1 === "") {
         a1 = 1;
       }
       a1 = parseFloat(a1);
-    var h = input.substring(x[0] + 1, vert[1]);
+    var h = input.input.substring(x[0] + 1, vert[1]);
       if (h === "") {
         h = 0;
       }
       h = parseFloat(h);
-    var k = input.substring(vert[1] + 1);
+    var k = input.input.substring(vert[1] + 1);
       if (k === "") {
         k = 0;
       }
+      k = parseFloat(k);
+    //If problem is a function
     if (y === "y") {
+      console.log("It's a function");
       var o1 = (((0-k)/a)-h)/a1;
       var o2 = ((-1*(0-k)/a)-h)/a1;
       if (k>0) {
-        area.value = area.value + "\n" + input +"\n" + "Vertex = " + h + "," + k +"\n" + "No x intercepts";
-        area.scrollTop = area.scrollHeight;
+        input.output = "Vertex = (" + h + "," + k + ")<br>" + "No x intercepts";
       }else if (o1 === o2) {
-        area.value = area.value + "\n" + input +"\n" + "Vertex = " + h + "," + k +"\n" + "x intercept = " + o1;
-        area.scrollTop = area.scrollHeight;
-        area.style.textDecoration= "underline";
-        output = o1;
+        input.output = "Vertex = (" + h + "," + k + ")<br>" + "x intercept = " + o1;
       }else{
-        area.value = area.value + "\n" + input +"\n" + "Vertex = " + h + "," + k +"\n" + "x intercepts = " + o1 + "," + o2;
-        area.style.textDecoration= "underline";
-        area.scrollTop = area.scrollHeight;
+        input.output = "Vertex = (" + h + "," + k + ")<br>" + "x intercepts = " + o1 + "," + o2;
       }
-    }else{
+    }
+    
+    //If problem is solving for x
+    else{
       var o1 = (((y-k)/a)-h)/a1;
       var o2 = ((-1*(y-k)/a)-h)/a1;
       if (o1 === o2) {
-        area.value = area.value + "\n" + input +"\n" + "x = " + o1;
-        area.style.textDecoration= "underline";
-        area.scrollTop = area.scrollHeight;
-        output = o1;
+        input.output = "x = " + o1;
       }else{
-        area.value = area.value + "\n" + input +"\n" + "x = " + o1 + "," + o2;
-        area.style.textDecoration= "underline";
-        area.scrollTop = area.scrollHeight;
+        input.output = "x = " + o1 + "," + o2;
       }
     }
-}
-  //Quadratic
+};
+
+//Quadratic
 var quadraticAlgebra = function () {
   if (x.length !== 0 && exp.length !== 0) {
     var y = input.substring(0,e);

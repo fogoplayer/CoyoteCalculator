@@ -55,6 +55,7 @@ var CE = function () {
   exp = [];
   p = [];
   e = "";
+  y = "";
   //Reset input object, but not output
   inputBox.value = "";
   input.indicator = "";
@@ -81,7 +82,7 @@ var print = function (){
   
   CE();
   input.indicator = "";
-  output.scrollTop = 1000000000000000000000;
+  output.scrollTop = output.scrollHeight;
 };
 
 /*This commnent exists solely to prevent ACE's "..." bug*/

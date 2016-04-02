@@ -1,5 +1,5 @@
 //Variables
-var version = "web.1.3.3";
+var version = "web.1.5.0";
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
@@ -23,5 +23,5 @@ var vert = [];
 var exp = [];
 var p = [];
 var e;
-
+var y;
 /*This commnent exists solely to prevent ACE's "..." bug*/

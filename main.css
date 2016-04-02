@@ -9,6 +9,11 @@
   outline:0;
 }
 
+::-webkit-scrollbar
+{
+    width: 0px;
+}
+
 html {
   border:0px;
   height:100%;
