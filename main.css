@@ -183,13 +183,19 @@ html {
         display:none;
       } 
       
+      .header {
+        width:100vh;
+        background-color:gray;
+        color:white;
+      }
+      
       #bodyForNonKeypad {
         height:80vh;
         font-size:20px;
-        width:100%;
+        width:86vh;
         overflow:scroll;
         padding:7vh;
-        padding-top:0vh;
+        padding-top:10px;
       }
       
         .versionNumber {
