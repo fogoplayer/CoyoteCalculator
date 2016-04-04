@@ -49,13 +49,17 @@ var backspace = function () {
 //Clears current Entry
 var CE = function () {
   //Reset algebra variables
+  e = 0;
   x = [];
-  plus = [];
-  vert = [];
-  exp = [];
-  p = [];
-  e = "";
+  verticalLine = [];
+  openParentheses = [];
+  closeParentheses = [];
+  operator = [];
   y = "";
+  a = "";
+  exponent = [];
+  b = "";
+  c = "";
   //Reset input object, but not output
   inputBox.value = "";
   input.indicator = "";

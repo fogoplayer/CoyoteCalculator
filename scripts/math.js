@@ -92,10 +92,9 @@ var simpleRad = function () {
   
 //Determine the type of algebra
 var algebra = function(){
-  //Scan equation
+  //Search for specific symbols
   for (i = 0; i < input.input.length; i++) {
-    var char = input.input.substring(i,i+1);
-    switch(char){
+    switch (input.input.substring(i,i + 1) ) {
       case "=":
         e = i;
         break;
@@ -105,72 +104,77 @@ var algebra = function(){
         break;
         
       case "|":
-        vert.push(i);
+        verticalLine.push(i);
+        break;
+        
+      case "(":
+        openParentheses.push(i);
+        break;
+        
+      case ")":
+        closeParentheses.push(i);
         break;
         
       case "^":
-        exp.push(i + 1);
-        for (j = exp[0]; j < input.length; j++) {
-          if (input.substring(j, j + 1) === "+") {
-            p.push(j);
-          }
-        }
+        exponent.push(i);
         break;
       
-      default:
+      case "+":
+      case "-":
+      case "*":
+      case "/":
+        operator.push(i);
         break;
     }
   }
-  //Find variables that every algorithm uses
+  
+  //Determine values of variables all three equations use.
   y = input.input.substring(0,e);
+  a = input.input.substring(e + 1, x[0] - 1);
+    if (a === "") {
+      a = 1;
+    }
+    a= parseFloat(a);
   
-  
-  if (x.length === 1 && vert.length === 0 && exp.length === 0) {
+  //Go to a specific function for further analysis
+  if (x.length === 1 && verticalLine.length === 0 && exponent.length === 0) {
     linearAlgebra();
-  } else if (x.length !== 0 && vert.length ===  2) {
+  } else if (verticalLine.length ===  2) {
     absoluteValueAlgebra();
+  } else if (exponent.length === 1) {
+    quadraticAlgebra();
   }
 };
 
 //Linear
 var linearAlgebra = function () {
-  var a = input.input.substring(e + 1, x[0]);
-    if (a === "") {
-      a = 1;
-    }
   var b = input.input.substring(x[0] + 1);
     if (b === "") {
       b = 0;
     }
-  input.output = (y-b)/a;
+  input.output = "x = " +(y-b)/a;
 };
-  
-  
+
 //Absolute value
 var absoluteValueAlgebra = function () {
     //Determine variable placement
-    var a = input.input.substring(e + 1, vert[0]);
-      if (a === "") {
-        a = 1;
-      }
-    var a1 = input.input.substring(vert[0] + 1, x[0]);
+    var a1 = input.input.substring(verticalLine[0] + 1, x[0]);
       if (a1 === "") {
         a1 = 1;
       }
       a1 = parseFloat(a1);
-    var h = input.input.substring(x[0] + 1, vert[1]);
+    var h = input.input.substring(x[0] + 1, verticalLine[1]);
       if (h === "") {
         h = 0;
       }
       h = parseFloat(h);
-    var k = input.input.substring(vert[1] + 1);
+    var k = input.input.substring(verticalLine[1] + 1);
       if (k === "") {
         k = 0;
       }
       k = parseFloat(k);
     //If problem is a function
     if (y === "y") {
-      console.log("It's a function");
       var o1 = (((0-k)/a)-h)/a1;
       var o2 = ((-1*(0-k)/a)-h)/a1;
       if (k>0) {
@@ -189,75 +193,56 @@ var absoluteValueAlgebra = function () {
       if (o1 === o2) {
         input.output = "x = " + o1;
       }else{
-        input.output = "x = " + o1 + "," + o2;
+        input.output = "x = " + o1 + ", " + o2;
       }
     }
 };
 
 //Quadratic
 var quadraticAlgebra = function () {
-  if (x.length !== 0 && exp.length !== 0) {
-    var y = input.substring(0,e);
-    var a = input.substring(e + 1, x[0]);
-      if (a === "") {
-        a = 1;
-      }
-    var poly = parseFloat(input.substring(exp[0], p[0]));
+  //Variables
+  var b;
+  var c;
+  if (x.length !== 0 && exponent.length !== 0) {
     if (x.length > 1){
-      var b = (input.substring(exp[0] + 1, x[1]));
+      var b = ( input.input.substring(exponent[0] + 4, x[1]));
         if (b === "") {
           b = 1;
         }
-      var c = parseFloat(input.substring(x[1] + 1));
+      var c = parseFloat( input.input.substring(x[1] + 1));
         if (c === "") {
           c = 0;
         }
     }else{
-      var b = 0;
-      var c = (input.substring(exp[0] + 1));
+      b = 0;
+      c = ( input.input.substring(exponent[0] + 4));
         if (c === "") {
           c = 0;
         }
         c = parseFloat(c);
     }
+    
     if (y === "y") {
-      var o1 = (-1*(b)+Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
+      console.log("a = " + a + "b = " + b + "c = " + c);
+      var o1 = ((b)+Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
       var o2 = (-1*(b)-Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
       if ((Math.pow(b, 2)- (4 * a * c)) < 0) {
-        area.value = area.value + "\n" + input +"\n" + "No x intercepts";
-        indicator = "";
-        area.scrollTop = area.scrollHeight;
+        input.output = "No x intercepts";
       }else if (o1 === o2) {
-        area.value = area.value + "\n" + input +"\n" + "x intercept = " + o1;
-        indicator = "";
-        area.scrollTop = area.scrollHeight;
-        area.style.textDecoration= "underline";
-        output = o1;
+        input.output =  "x intercept = " + o1;
       }else{
-        area.value = area.value + "\n" + input +"\n" + "x intercepts = " + o1 + "," + o2;
-        area.style.textDecoration= "underline";
-        indicator = "";
-        area.scrollTop = area.scrollHeight;
+        input.output = "x intercepts = " + o1 + ", " + o2;
       }
     }else{
       c = c-y;
-      var o1 = (-1*(b)+Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
+      var o1 = ((b)+Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
       var o2 = (-1*(b)-Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
       if ((Math.pow(b, 2)- (4 * a * c)) < 0) {
-        area.value = area.value + "\n" + input +"\n" + "No x intercepts";
-        indicator = "";
-        area.scrollTop = area.scrollHeight;
+        input.output = "No x intercepts";
       }else if (o1 === o2) {
-        area.value = area.value + "\n" + input +"\n" + "x = " + o1;
-        area.scrollTop = area.scrollHeight;
-        indicator = "";
-        area.style.textDecoration= "underline";
-        output = o1;
+        input.output = "x = " + o1;
       }else{
-        area.value = area.value + "\n" + input +"\n" + "x = " + o1 + "," + o2;
-        area.style.textDecoration= "underline";
-        indicator = "";
-        area.scrollTop = area.scrollHeight;
+        input.output = "x = " + o1 + "," + o2;
       }
     }
   }

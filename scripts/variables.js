@@ -17,11 +17,13 @@ var input = {
 };
 
 //Algebra Variables
+var e = 0;
 var x = [];
-var plus = [];
-var vert = [];
-var exp = [];
-var p = [];
-var e;
-var y;
+var verticalLine = [];
+var openParentheses = [];
+var closeParentheses = [];
+var operator = [];
+var y = "";
+var a = "";
+var exponent = [];
 /*This commnent exists solely to prevent ACE's "..." bug*/
