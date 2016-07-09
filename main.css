@@ -2,8 +2,8 @@
 :root {
   --color1: white;
   --color2: darkblue;
-  --textColor: gray;
-  --hamburgerWidth:320px;
+  --textcolor: gray;
+  --hamburgerwidth:320px;
 }
 
 * {
@@ -41,7 +41,7 @@ html {
       height:100%;
       width: 100%;
       background-color:var(--color1);
-      color:var(--textColor);
+      color:var(--textcolor);
       overflow:hidden;
   }
   
@@ -52,7 +52,7 @@ html {
       text-align:center;
       z-index:10;
       display:block;
-      color:var(--textColor);
+      color:var(--textcolor);
       opacity:1;
     }
     
@@ -96,7 +96,7 @@ html {
         margin-left:94vh;
         margin-top: 84vh;
         border-radius:50%;
-        background-color:var(--textColor);
+        background-color:var(--textcolor);
         box-shadow: 0px 5px 50px black;
         
         position:absolute;
@@ -109,19 +109,19 @@ html {
       height: 100%;
       width: calc(100vw - 100vh);
       background-color:var(--color2);
-      box-shadow: -10px 0 20px var(--textColor);
+      box-shadow: -10px 0 20px var(--textcolor);
     }
       
       #output {
         height:calc(90% - 3px);
         width:calc(100vw - 100vh);
-        border-bottom:1px solid var(--textColor);
+        border-bottom:1px solid var(--textcolor);
         resize:none;
         overflow-y:scroll;
         
         text-align:right;
         font-size:5vh;
-        color:var(--textColor);
+        color:var(--textcolor);
       }
       
       #input {
@@ -142,10 +142,10 @@ html {
       
       #hamburger {
         height:calc(100vh - 10px);
-        width:var(--hamburgerWidth);
+        width:var(--hamburgerwidth);
         padding-top:8px;
         position:absolute;
-        margin-left:calc(-1 * (var(--hamburgerWidth) + 60px));
+        margin-left:calc(-1 * (var(--hamburgerwidth) + 60px));
         z-index:1;
         background-color:var(--color1);
         box-shadow: 10px 0 20px gray;
@@ -190,7 +190,7 @@ html {
       
       .header {
         width:100vh;
-        background-color:var(--textColor);
+        background-color:var(--textcolor);
         color:var(--color1);
       }
       
