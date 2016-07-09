@@ -1,6 +1,6 @@
 //On Execute
 var execute = function () {
-  input.input = inputBox.value;
+  input.input = inputBox.innerHTML;
   switch(input.indicator) {
     case "":
       arithmetic();
