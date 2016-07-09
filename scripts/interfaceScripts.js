@@ -11,15 +11,34 @@ inputBox.focus();
 
 //Open Hamburger Menu
 var openHamburger = function() {
-  hamburger.style.display = "block";
+  hamburger.className = "closed";
   overlay.style.display = "block";
 };
 
 //Close Hamburger Menu
 var hideHamburger = function() {
-  hamburger.style.display = "none";
+  hamburger.className = "open";
   overlay.style.display = "none";
   inputBox.focus();
+};
+
+//Dropdowns
+var openDropdown = function(dropdownId) {
+  console.log("Opening dropdown");
+  document.getElementById(dropdownId + "Chevron").className = "dropdownChevron up";
+  document.getElementById(dropdownId + "Content").className = "dropdownContent open";
+  document.getElementById(dropdownId + "Header").onclick = function() {
+    closeDropdown(dropdownId);
+  };
+};
+
+var closeDropdown = function(dropdownId) {
+  console.log("Closing dropdown");
+  document.getElementById(dropdownId + "Chevron").className = "dropdownChevron down";
+  document.getElementById(dropdownId + "Content").className = "dropdownContent closed";
+  document.getElementById(dropdownId + "Header").onclick = function() {
+    openDropdown(dropdownId);
+  };
 };
 
 //Loads keypads to Div1
@@ -32,7 +51,7 @@ var loadToDiv1 = function (elementID) {
 
 //Adds the clicked-on character to the end of the input string
 var addToEnd = function(numberSymbol) {
-  inputBox.value = inputBox.value + numberSymbol;
+  inputBox.innerHTML = inputBox.innerHTML + numberSymbol;
   inputBox.focus();
 };
 
@@ -42,7 +61,7 @@ var addIndicator = function(indicator) {
 
 //Removes the last character in the input
 var backspace = function () {
-  inputBox.value = inputBox.value.substring(0, inputBox.value.length-1);
+  inputBox.innerHTML = inputBox.innerHTML.substring(0, inputBox.innerHTML.length-1);
   inputBox.focus();
 };
 
@@ -61,7 +80,7 @@ var CE = function () {
   b = "";
   c = "";
   //Reset input object, but not output
-  inputBox.value = "";
+  inputBox.innerHTML = "";
   input.indicator = "";
   input.operatorArray = [];
   input.openParenthesesArray = [];
