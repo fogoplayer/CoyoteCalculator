@@ -4,12 +4,12 @@
       <title>Coyote Calculator</title>
       <link rel = "stylesheet" type = "text/css" href = "main.css">
       <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=0B_QvMSQr8UBMOUpyM1JLQnFDM2M">
-      <!--Jquery-->
+      <!--JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!--Material Icons-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
-  <body>
+  <body id = "body">
     
     <div id = "splash">
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -59,7 +59,7 @@
     
     <div id = "div2">
       <div id = "output"></div>
-      <input id = "input"/>
+      <div id = "input"></div>
       <div id = "reset" onclick = "reset()">RESET</div>
     </div>
     
@@ -67,8 +67,8 @@
       <button class = "button" id = "hamburgerIcon" onclick = "hideHamburger()">&#8801;</button>
       <button class = "hamburgerButton" onclick = "loadToDiv1('elements/standardKeypad.html')"><i class="material-icons">looks_one</i> Standard Keypad</button>
       <button class = "hamburgerButton" onclick = "loadToDiv1('elements/advancedFunctionKeypad.html')"><i class="material-icons">add_circle</i> Advanced Keypad</button>
-      <!--<button class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')"><i class="material-icons">help</i> Help</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')"><i class="material-icons">&#xE8B8;</i> Settings</button>-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')"><i class="material-icons">help</i> Help</button>
+      <!--<button class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')"><i class="material-icons">&#xE8B8;</i> Settings</button>-->
       <button class = "hamburgerButton" onclick = "loadToDiv1('elements/changelog.html')"><i class="material-icons">change_history</i>Changelog</button>
     </div>
     <div id = "overlay" onclick = "hideHamburger()"></div>
