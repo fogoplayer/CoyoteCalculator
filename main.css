@@ -151,16 +151,21 @@ html {
       #hamburger {
         height:calc(100vh - 10px);
         width:275px;
-        min-width:25vh;
         padding:20px;
         position:absolute;
+        margin-left:-325px;
         z-index:1;
         background-color:white;
         box-shadow: 10px 0 20px gray;
-        display:none;
+        display:block;
         overflow-y:scroll;
+        transition-property:margin-left;
+        transition-duration:0.5s;
       }
-      
+        #hamburger.closed{
+          margin-left:0px;
+        }
+        
         #hamburgerIcon {
           margin-top:-20px;
           margin-left:-20px;
@@ -213,5 +218,41 @@ html {
           width:100%;
           padding-left:5vh;
         }
+        
+        .dropdownHeader {
+          height:10vh;
+          width:100%;
+          Font-size:5vh;
+          line-height:10vh;
+        }
+        
+        .dropdownTitle {
+          width:76vh;
+        }
+        
+        .dropdownChevron {
+          height:10vh;
+          width:10vh;
+          transition-duration:0.5s;
+        }
+          
+          .dropdownChevron.up {
+            transform:rotate(-180deg);
+          }
+          
+          .material-icons.chevron {
+            font-size: 10vh;
+          }
+          
+        .dropdownContent {
+          height:0px;
+          width:100%;
+          overflow:hidden;
+          transition-property:height;
+          transition-duration:2s;
+        }
+          .dropdownContent.open {
+            height:auto;
+          }
 
 /*This commnent exists solely to prevent ACE's "..." bug*/
