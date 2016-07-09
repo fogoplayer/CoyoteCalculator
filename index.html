@@ -3,30 +3,15 @@
   <head>
       <title>Coyote Calculator</title>
       <link rel = "stylesheet" type = "text/css" href = "main.css">
-      <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=0B_QvMSQr8UBMOUpyM1JLQnFDM2M">
+      <link rel="icon" type="image/png" href= "images/howl.png">
       <!--JQuery-->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <!--Material Icons-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
   <body id = "body">
-    
     <div id = "splash">
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- SCalc Skyscraper Ad --> <ins class="adsbygoogle"
-             style="display:inline-block;width:300px;height:100vh"
-             data-ad-client="ca-pub-6711296153770717"
-             data-ad-slot="8257740586"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <div class = "spacerDiv"></div>
-      <img id = "splashImage" src = "https://drive.google.com/uc?id=0B_QvMSQr8UBMYVk2YjV1UUVsaTg">
-        <div class = "spacerDiv"></div>
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- SCalc Skyscraper Ad --> <ins class="adsbygoogle"
-             style="display:inline-block;width:300px;height:100vh"
-             data-ad-client="ca-pub-6711296153770717"
-             data-ad-slot="8257740586"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <img id = "splashImage" src = "images/largeIcon.png">
     </div>
     
     <div id = "div1">
@@ -64,12 +49,56 @@
     </div>
     
     <div id = "hamburger">
-      <button class = "button" id = "hamburgerIcon" onclick = "hideHamburger()">&#8801;</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/standardKeypad.html')"><i class="material-icons">looks_one</i> Standard Keypad</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/advancedFunctionKeypad.html')"><i class="material-icons">add_circle</i> Advanced Keypad</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')"><i class="material-icons">help</i> Help</button>
-      <!--<button class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')"><i class="material-icons">&#xE8B8;</i> Settings</button>-->
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/changelog.html')"><i class="material-icons">change_history</i>Changelog</button>
+      
+      <!--Standard Keypad-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/standardKeypad.html')">
+        <div class = "hamburgerIcon">
+          <i class="material-icons">looks_one</i>
+        </div>
+        <div class = "hamburgerText">
+          Standard Keypad
+        </div>
+      </button>
+      
+      <!--Advanced Keypad-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/advancedFunctionKeypad.html')">
+        <div class = "hamburgerIcon">
+          <i class="material-icons">add_circle</i>
+        </div>
+        <div class = "hamburgerText">
+          Advanced Keypad
+        </div>
+      </button>
+      
+      <!--Help-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')">
+        <div class = "hamburgerIcon">
+          <i class = "material-icons">help</i>
+        </div>
+        <div class = "hamburgerText">
+          Help
+        </div>
+      </button>
+      
+      <!--<button class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')">
+         <div class = "hamburgerIcon">
+          <i class="material-icons">&#xE8B8;</i>
+        </div>
+        <div class = "hamburgerText">
+          Settings
+        </div>
+      </button>-->
+      
+      <!--Changelog-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/changelog.html')">
+        <div class = "hamburgerIcon">
+          <i class="material-icons">change_history</i>
+        </div>
+        <div class = "hamburgerText">
+          Changelog
+        </div>
+      </button>
+      
     </div>
     <div id = "overlay" onclick = "hideHamburger()"></div>
     

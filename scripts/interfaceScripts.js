@@ -1,5 +1,5 @@
 //Setup
-setTimeout(function () {closeSplash();}, 4000);
+setTimeout(function () {closeSplash();}, 2000);
 console.log("Version: " + version);
 inputBox.focus();
 

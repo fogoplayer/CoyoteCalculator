@@ -1,3 +1,11 @@
+/*Variables*/
+:root {
+  --color1: white;
+  --color2: darkblue;
+  --textColor: gray;
+  --hamburgerWidth:320px;
+}
+
 * {
   padding:0px;
   margin:0px;
@@ -32,8 +40,8 @@ html {
       border:0px;
       height:100%;
       width: 100%;
-      background-color:white;
-      color:gray;
+      background-color:var(--color1);
+      color:var(--textColor);
       overflow:hidden;
   }
   
@@ -44,7 +52,7 @@ html {
       text-align:center;
       z-index:10;
       display:block;
-      color:gray;
+      color:var(--textColor);
       opacity:1;
     }
     
@@ -71,8 +79,7 @@ html {
         width: 25%;
         text-align: center;
         font-size:16vh;
-        text-overflow:wrap;
-        
+
         /*CSS to disable text-selection*/
         -moz-user-select: -moz-none;
         -khtml-user-select: none;
@@ -80,22 +87,6 @@ html {
         -o-user-select: none;
         user-select: none;
       }
-      
-        .advFunction {
-          height:calc(20% - 3vh);
-          padding-top:3vh;
-          font-size:4vh;
-          width: 25%;
-          text-align: center;
-          text-overflow:wrap;
-
-          /*CSS to disable text-selection*/
-          -moz-user-select: -moz-none;
-          -khtml-user-select: none;
-          -webkit-user-select: none;
-          -o-user-select: none;
-          user-select: none;
-        }
 
       #equals {
         
@@ -105,37 +96,38 @@ html {
         margin-left:94vh;
         margin-top: 84vh;
         border-radius:50%;
-        background-color:gray;
+        background-color:var(--textColor);
         box-shadow: 0px 5px 50px black;
         
         position:absolute;
         text-align:center;
         font-size:10vh;
-        color:white;
+        color:var(--color1);
       }
       
     #div2 {
       height: 100%;
       width: calc(100vw - 100vh);
-      background-color:darkblue;
-      box-shadow: -10px 0 20px gray;
+      background-color:var(--color2);
+      box-shadow: -10px 0 20px var(--textColor);
     }
       
       #output {
         height:calc(90% - 3px);
         width:calc(100vw - 100vh);
-        border-bottom:1px solid gray;
+        border-bottom:1px solid var(--textColor);
         resize:none;
         overflow-y:scroll;
         
         text-align:right;
         font-size:5vh;
-        color:gray;
+        color:var(--textColor);
       }
       
       #input {
         height:10%; 
         width:calc(100% - 27vh);
+        padding-top:2.5vh;
         padding-left:7vh;
         font-size: 5vh;
       }
@@ -150,12 +142,12 @@ html {
       
       #hamburger {
         height:calc(100vh - 10px);
-        width:275px;
-        padding:20px;
+        width:var(--hamburgerWidth);
+        padding-top:8px;
         position:absolute;
-        margin-left:-325px;
+        margin-left:calc(-1 * (var(--hamburgerWidth) + 60px));
         z-index:1;
-        background-color:white;
+        background-color:var(--color1);
         box-shadow: 10px 0 20px gray;
         display:block;
         overflow-y:scroll;
@@ -166,22 +158,24 @@ html {
           margin-left:0px;
         }
         
-        #hamburgerIcon {
-          margin-top:-20px;
-          margin-left:-20px;
-          height:20vh;
-          width: 25vh;
-          text-align: center;
-          font-size:16vh;
-          text-overflow:wrap;
-        }
-        
         .hamburgerButton {
-          height:50px;
-          width: calc(275px - 40px);
-          font-size:25px;
+          height:48px;
+          width: calc(320px - 40px);
+          padding-left:16px;
           text-align:left;
         }
+        
+          .hamburgerIcon {
+            width:24px;
+            height:48px;
+            padding-top:12px;
+          }
+          
+          .hamburgerText {
+            padding-left:calc(72px - 16px - 24px);
+            font-size:14px;
+            line-height:48px;
+          }
         
       #overlay {
         height:100%;
@@ -196,8 +190,8 @@ html {
       
       .header {
         width:100vh;
-        background-color:gray;
-        color:white;
+        background-color:var(--textColor);
+        color:var(--color1);
       }
       
       #bodyForNonKeypad {
