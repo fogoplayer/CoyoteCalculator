@@ -49,12 +49,56 @@
     </div>
     
     <div id = "hamburger">
-      <button class = "button" id = "hamburgerIcon" onclick = "hideHamburger()">&#8801;</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/standardKeypad.html')"><i class="material-icons">looks_one</i> Standard Keypad</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/advancedFunctionKeypad.html')"><i class="material-icons">add_circle</i> Advanced Keypad</button>
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')"><i class="material-icons">help</i> Help</button>
-      <!--<button class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')"><i class="material-icons">&#xE8B8;</i> Settings</button>-->
-      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/changelog.html')"><i class="material-icons">change_history</i>Changelog</button>
+      
+      <!--Standard Keypad-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/standardKeypad.html')">
+        <div class = "hamburgerIcon">
+          <i class="material-icons">looks_one</i>
+        </div>
+        <div class = "hamburgerText">
+          Standard Keypad
+        </div>
+      </button>
+      
+      <!--Advanced Keypad-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/advancedFunctionKeypad.html')">
+        <div class = "hamburgerIcon">
+          <i class="material-icons">add_circle</i>
+        </div>
+        <div class = "hamburgerText">
+          Advanced Keypad
+        </div>
+      </button>
+      
+      <!--Help-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/help.html')">
+        <div class = "hamburgerIcon">
+          <i class = "material-icons">help</i>
+        </div>
+        <div class = "hamburgerText">
+          Help
+        </div>
+      </button>
+      
+      <!--<button class = "hamburgerButton" onclick = "loadToDiv1('elements/settings.html')">
+         <div class = "hamburgerIcon">
+          <i class="material-icons">&#xE8B8;</i>
+        </div>
+        <div class = "hamburgerText">
+          Settings
+        </div>
+      </button>-->
+      
+      <!--Changelog-->
+      <button class = "hamburgerButton" onclick = "loadToDiv1('elements/changelog.html')">
+        <div class = "hamburgerIcon">
+          <i class="material-icons">change_history</i>
+        </div>
+        <div class = "hamburgerText">
+          Changelog
+        </div>
+      </button>
+      
     </div>
     <div id = "overlay" onclick = "hideHamburger()"></div>
     
