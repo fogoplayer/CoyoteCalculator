@@ -1,11 +1,4 @@
-/*Variables*/
-:root {
-  --color1: white;
-  --color2: darkblue;
-  --textcolor: gray;
-  --hamburgerwidth:320px;
-}
-
+/**/
 * {
   padding:0px;
   margin:0px;
@@ -26,6 +19,14 @@ html {
   border:0px;
   height:100%;
   width: 100%;
+  
+  --color1: white;
+  --color2: darkblue;
+  --textcolor: gray;
+  --shadowColor: gray;
+  --hamburgerwidth:320px;
+  --shortways:100vh;
+  --longways:100vw;
 }
 
 .material-icons {
@@ -52,26 +53,24 @@ html {
       text-align:center;
       z-index:10;
       display:block;
-      color:var(--textcolor);
+      background-color:white;
       opacity:1;
     }
     
       .spacerDiv {
-        width:calc((100vw - 100vh) / 2 - 300px);
+        width:calc((var(--longways) - var(--shortways)) /2);
         height:100%;
       }
     
       #splashImage {
         display:block;
-        height:100vh;
-        max-height:calc(100vw - 600px);
-        width:100vh;
-        max-width:calc(100vw - 600px);
+        height:var(--shortways);
+        width:var(--shortways);
       }
   
     #div1 {
       height:100%;
-      width:100vh;
+      width:var(--shortways);
     }
     
       .button {
@@ -107,14 +106,14 @@ html {
       
     #div2 {
       height: 100%;
-      width: calc(100vw - 100vh);
+      width: calc(var(--longways) - var(--shortways));
       background-color:var(--color2);
-      box-shadow: -10px 0 20px var(--textcolor);
+      box-shadow: -10px 0 20px var(--shadowcolor);
     }
       
       #output {
         height:calc(90% - 3px);
-        width:calc(100vw - 100vh);
+        width:calc(var(--longways) - var(--shortways));
         border-bottom:1px solid var(--textcolor);
         resize:none;
         overflow-y:scroll;
@@ -141,14 +140,14 @@ html {
       }
       
       #hamburger {
-        height:calc(100vh - 10px);
+        height:calc(var(--shortways) - 10px);
         width:var(--hamburgerwidth);
         padding-top:8px;
         position:absolute;
         margin-left:calc(-1 * (var(--hamburgerwidth) + 60px));
         z-index:1;
         background-color:var(--color1);
-        box-shadow: 10px 0 20px gray;
+        box-shadow: 10px 0 20px var(--shadowcolor);
         display:block;
         overflow-y:scroll;
         transition-property:margin-left;
@@ -189,7 +188,7 @@ html {
       } 
       
       .header {
-        width:100vh;
+        width:var(--shortways);
         background-color:var(--textcolor);
         color:var(--color1);
       }
@@ -201,6 +200,7 @@ html {
         overflow:scroll;
         padding:7vh;
         padding-top:10px;
+        background-color:var(--color1);
       }
       
         .versionNumber {
@@ -248,5 +248,40 @@ html {
           .dropdownContent.open {
             height:auto;
           }
-
+          
+          .colorPicker {
+            height:8vh;
+            width:8vh;
+            margin-right:2vh;
+            border:0.5px solid black;
+          }
+          
+            .red {
+              background-color:darkred;
+            }
+            
+            .yellow {
+              background-color:yellow;
+            }
+            
+            .blue {
+              background-color:darkblue;
+            }
+            
+            .green {
+              background-color:darkgreen;
+            }
+            
+            .black {
+              background-color:black;
+              border:0.5px solid white;
+            }
+            
+            .gray {
+              background-color:gray;
+            }
+            
+            .white {
+              background-color:white;
+            }
 /*This commnent exists solely to prevent ACE's "..." bug*/
