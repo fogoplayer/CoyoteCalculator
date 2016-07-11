@@ -1,5 +1,5 @@
 //Variables
-var version = "web.4.3.0";
+var version = "web.4.2.0";
 var inputBox = document.getElementById("input");
 var outputBox = document.getElementById("output");
 var splashScreen = document.getElementById("splash");
