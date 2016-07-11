@@ -6,5 +6,53 @@
 </div>
 
 <div id = "bodyForNonKeypad">
-  Eventually I'll put settings here.
+  <div class = "dropdownHeader" id = "colorHeader" onclick = "openDropdown('color')">
+    <div class = "dropdownTitle" id = "colorTitle">Change Color Palette</div>
+    <div class = "dropdownChevron" id = "colorChevron"><i class="material-icons chevron">keyboard_arrow_down</i></div>
+  </div>
+  <div class = "dropdownContent" id = "colorContent">
+    <p class = "versionNumber">Choose a background color</p>
+    <button class = "colorPicker red" onclick = "setVariable('--color1', 'darkred')"></button>
+    <button class = "colorPicker yellow" onclick = "setVariable('--color1', 'yellow')" id = "backgroundYellow"></button>
+    <button class = "colorPicker blue" onclick = "setVariable('--color1', 'darkblue')" id = "backgroundBlue"></button>
+    <button class = "colorPicker green" onclick = "setVariable('--color1', 'darkgreen')" id = "backgrounddarkgreen"></button>
+    <button class = "colorPicker black" onclick = "setVariable('--color1', 'black')" id = "backgroundBlack"></button>
+    <button class = "colorPicker gray" onclick = "setVariable('--color1', 'gray')" id = "backgroundGray"></button>
+    <button class = "colorPicker white" onclick = "setVariable('--color1', 'white')" id = "backgroundWhite"></button>
+    
+    <p class = "versionNumber">Choose a secondary color</p>
+    <button class = "colorPicker red"onclick = "setVariable('--color2', 'darkred')" id = "backgroundRed"></button>
+    <button class = "colorPicker yellow" onclick = "setVariable('--color2', 'yellow')" id = "backgroundYellow"></button>
+    <button class = "colorPicker blue" onclick = "setVariable('--color2', 'darkblue')" id = "backgroundBlue"></button>
+    <button class = "colorPicker green" onclick = "setVariable('--color2', 'darkgreen')" id = "backgrounddarkgreen"></button>
+    <button class = "colorPicker black" onclick = "setVariable('--color2', 'black')" id = "backgroundBlack"></button>
+    <button class = "colorPicker gray" onclick = "setVariable('--color2', 'gray')" id = "backgroundGray"></button>
+    <button class = "colorPicker white" onclick = "setVariable('--color2', 'white')" id = "backgroundWhite"></button>
+    
+    <p class = "versionNumber">Choose a text color</p>
+    <button class = "colorPicker red" onclick = "setVariable('--textcolor', 'darkred')" id = "backgroundRed"></button>
+    <button class = "colorPicker yellow" onclick = "setVariable('--textcolor', 'yellow')" id = "backgroundYellow"></button>
+    <button class = "colorPicker blue" onclick = "setVariable('--textcolor', 'darkblue')" id = "backgroundBlue"></button>
+    <button class = "colorPicker green" onclick = "setVariable('--textcolor', 'darkgreen')" id = "backgrounddarkgreen"></button>
+    <button class = "colorPicker black" onclick = "setVariable('--textcolor', 'black')" id = "backgroundBlack"></button>
+    <button class = "colorPicker gray" onclick = "setVariable('--textcolor', 'gray')" id = "backgroundGray"></button>
+    <button class = "colorPicker white" onclick = "setVariable('--textcolor', 'white')" id = "backgroundWhite"></button>
+    
+    <p class = "versionNumber">Choose a shadow color</p>
+    <button class = "colorPicker red" onclick = "setVariable('--shadowcolor', 'darkred')" id = "shadowRed"></button>
+    <button class = "colorPicker yellow" onclick = "setVariable('--shadowcolor', 'yellow')" id = "shadowYellow"></button>
+    <button class = "colorPicker blue" onclick = "setVariable('--shadowcolor', 'darkblue')" id = "shadowBlue"></button>
+    <button class = "colorPicker green" onclick = "setVariable('--shadowcolor', 'darkgreen')" id = "shadowDarkgreen"></button>
+    <button class = "colorPicker black" onclick = "setVariable('--shadowcolor', 'black')" id = "shadowBlack"></button>
+    <button class = "colorPicker gray" onclick = "setVariable('--shadowcolor', 'gray')" id = "shadowGray"></button>
+    <button class = "colorPicker white" onclick = "setVariable('--shadowcolor', 'white')" id = "shadowWhite"></button>
+  </div>
+  
+  <div class = "dropdownHeader" id = "aboutHeader" onclick = "openDropdown('about')">
+    <div class = "dropdownTitle" id = "aboutTitle">About Coyote</div>
+    <div class = "dropdownChevron" id = "aboutChevron"><i class="material-icons chevron">keyboard_arrow_down</i></div>
+  </div>
+  <div class = "dropdownContent" id = "aboutContent">
+    <p class = "versionNumber">Coyote Calculator was created by Zarin Loosli to automate many of the menial tasks that are now a part of any math curriculum.</p>
+  </div>
 </div>

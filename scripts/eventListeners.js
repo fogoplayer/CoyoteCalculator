@@ -2,13 +2,20 @@ body.addEventListener("keypress",
   function(event) {
     switch (event.keyCode) {
       //Execute on Enter or equals sign
-      case 61:
       case 13:
-        if (event.KeyCode === 13) {
           equals.click();
-          console.log("clicked");
+        break;
+        
+      case 61:
+        if (input.indicator != "algebra") {
+          equals.click();
+          equalsCount = false;
+        }else if (input.indicator === "algebra" && equalsCount === true) {
+          equals.click();
+        }else{
+          addToEnd("=");
+          equalsCount = true;
         }
-        equals.click();
         break;
         
       //Numbers/Symbols
@@ -98,6 +105,10 @@ body.addEventListener("keypress",
           loadToDiv1("elements/help.html");
           break;
           
+        case 115:
+          loadToDiv1("elements/settings.html");
+          break;
+        
         case 33:
           loadToDiv1("elements/standardKeypad.html");
           break;

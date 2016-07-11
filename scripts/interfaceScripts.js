@@ -1,7 +1,20 @@
 //Setup
-setTimeout(function () {closeSplash();}, 2000);
+if (window.innerWidth < window.innerHeight) {
+  console.log("portrait");
+  document.getElementById("html").style.setProperty("--shortways", "100vw");
+  document.getElementById("html").style.setProperty("--longways", "100vh");
+  document.getElementById("spacerDiv").style.width = "0px";
+}
+
+ 
+setTimeout(
+  function () {
+    closeSplash();
+    versionChecker();
+    colorSetup();
+  }, 2000);
+console.log(document.cookie);
 console.log("Version: " + version);
-inputBox.focus();
 
 //Splash screen
   var closeSplash = function () {
@@ -108,4 +121,87 @@ var print = function (){
   output.scrollTop = output.scrollHeight;
 };
 
+var setVariable = function (variable, value) {
+  console.log(variable + " " + value);
+  document.getElementById("html").style.setProperty(variable, value);
+      writeCookie(variable,value);
+};
+
+//Create and edit cookies
+var writeCookie = function (name, value){
+  document.cookie = name + "=" + value;
+};
+
+var findCookie = function (name) {
+  //Find version # in cookie
+  for (i = 0; i <= docCookie.length; i++) {
+    if (docCookie.substring(i, i + name.length + 1) === name + "=") {
+      var numberStart = i + name.length + 1;
+      for (i = i + name.length + 1; docCookie.substring(i, i + 1) != ";" && i <= docCookie.length; i++) {
+        var numberEnd = i + 1;
+      }
+    }
+  }
+  cookieValue = docCookie.substring(numberStart, numberEnd);
+};
+
+//Use cookies to check on the version
+var versionChecker = function () {
+  findCookie("Version");
+  //Store cookie version as variable
+  var cookieVersion = cookieValue;
+  
+  //Ask to open changelog if Coyote has been updated.
+  if (cookieVersion != version) {
+    if (cookieVersion.substring(4,5) != version.substring(4,5)) {
+      var changeType = "a major change to Coyote's user interface.";
+    } else if (cookieVersion.substring(6,7) != version.substring(6,7)) {
+      var changeType = "new features you may want to use now or in the future.";
+    } else if (cookieVersion.substring(8,9) != version.substring(8,9)) {
+      var changeType = "primarily bug fixes.";
+    }
+    
+    var openLog = confirm("Coyote Calculator has been updated from version " + cookieVersion + " to version " + version + ". This update includes " + changeType + " \n\n Would you like to open the changelog to see what is new?");
+    if (openLog) {
+      loadToDiv1("elements/changelog.html");
+    }
+  }
+  writeCookie("Version", version); 
+};
+
+var colorSetup = function() {
+  findCookie("--color1");
+  if (cookieValue.length > 20) {
+    console.log("no color1");
+    writeCookie("--color1", "white");
+  }
+  findCookie("--color1");
+  setVariable("--color1", cookieValue);
+  
+  findCookie("--color2");
+  console.log(cookieValue);
+  if (cookieValue.length > 20) {
+    console.log("no color2");
+    writeCookie("--color2", "darkblue");
+  }
+  findCookie("--color2");
+  setVariable("--color2", cookieValue);
+  
+  findCookie("--textcolor");
+  if (cookieValue.length > 20) {
+    console.log("no textcolor");
+    writeCookie("--textcolor", "gray");
+  }
+  findCookie("--textcolor");
+  setVariable("--textcolor", cookieValue);
+  
+  findCookie("--shadowcolor");
+  if (cookieValue.length > 20) {
+    console.log("no shadowcolor");
+    writeCookie("--shadowcolor", "gray");
+  }
+  findCookie("--shadowcolor");
+  setVariable("--shadowcolor", cookieValue);
+  
+};
 /*This commnent exists solely to prevent ACE's "..." bug*/
