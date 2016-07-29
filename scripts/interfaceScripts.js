@@ -1,20 +1,51 @@
 //Setup
-if (window.innerWidth < window.innerHeight) {
-  console.log("portrait");
-  document.getElementById("html").style.setProperty("--shortways", "100vw");
-  document.getElementById("html").style.setProperty("--longways", "100vh");
-  document.getElementById("spacerDiv").style.width = "0px";
-}
-
- 
 setTimeout(
   function () {
+    orient();
     closeSplash();
     versionChecker();
     colorSetup();
   }, 2000);
 console.log(document.cookie);
 console.log("Version: " + version);
+
+//Screen orientation
+var orient = function () {
+  if (window.innerWidth < window.innerHeight) {
+  //Portrait
+    console.log("portrait");
+    document.getElementById("spacerDiv").style.width = "0px";
+    setVariable("--shortways", "100vw");
+    setVariable("--longways", "100vh");
+    console.log("loading");
+    loadToDiv1("elements/inputOutput.html");
+    loadToDiv2("elements/standardKeypad.html");
+    div1.className = "div2";
+    div2.className = "div1";
+    div1.style.height = "var(--remainder)";
+    div1.style.width = "var(--shortways)";
+    //document.getElementsByClassName("button").style.setProperty("font-size", "16vw");
+    var cols = document.getElementsByClassName('button');
+      for(i=0; i<cols.length; i++) {
+        console.log(i);
+        cols[i].style.fontSize = "1px!important";
+        console.log("2");
+      }
+    console.log(cols);
+    //document.getElementById("openHamburger").style.setProperty("color", "orange");
+    inputBox.style.setProperty("padding", "2.5vw");
+    console.log(2);
+  }else{
+  //Landscape
+    console.log("landscape");
+    document.getElementById("spacerDiv").style.width = "var(--remainder) /2";
+    setVariable("--shortways", "100vh");
+    setVariable("--longways", "100vw");
+    
+    loadToDiv1("elements/standardKeypad.html");
+    
+  }
+};
 
 //Splash screen
   var closeSplash = function () {
@@ -58,6 +89,12 @@ var closeDropdown = function(dropdownId) {
 //May eventually be modified to accept a Div as an argument for increased flexibility.
 var loadToDiv1 = function (elementID) {
   $('#div1').load(elementID, function() {
+    hideHamburger();
+  });
+};
+
+var loadToDiv2 = function (elementID) {
+  $('#div2').load(elementID, function() {
     hideHamburger();
   });
 };
@@ -122,7 +159,7 @@ var print = function (){
 };
 
 var setVariable = function (variable, value) {
-  console.log(variable + " " + value);
+  console.log("writing Cookie");
   document.getElementById("html").style.setProperty(variable, value);
       writeCookie(variable,value);
 };

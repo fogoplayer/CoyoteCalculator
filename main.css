@@ -27,14 +27,16 @@ html {
   --hamburgerwidth:320px;
   --shortways:100vh;
   --longways:100vw;
+  --remainder: calc(var(--longways) - var(--shortways));
 }
 
 .material-icons {
 }
 
   .material-icons.backspace {
-    font-size:20vh;
-    margin-left:2.5vh;
+    line-height:20vh;
+    font-size:10vh;
+    margin-left:5vh;
   }
 
   body {
@@ -47,8 +49,8 @@ html {
   }
   
     #splash {
-      height:100%;
-      width:100%;
+      height:101vh;
+      width:100vw;
       position:absolute;
       text-align:center;
       z-index:10;
@@ -58,7 +60,7 @@ html {
     }
     
       .spacerDiv {
-        width:calc((var(--longways) - var(--shortways)) /2);
+        width:calc(var(--remainder) /2);
         height:100%;
       }
     
@@ -68,8 +70,8 @@ html {
         width:var(--shortways);
       }
   
-    #div1 {
-      height:100%;
+    .div1 {
+      height:var(--shortways);
       width:var(--shortways);
     }
     
@@ -104,16 +106,17 @@ html {
         color:var(--color1);
       }
       
-    #div2 {
+    .div2 {
       height: 100%;
-      width: calc(var(--longways) - var(--shortways));
+      width: var(--remainder);
       background-color:var(--color2);
       box-shadow: -10px 0 20px var(--shadowcolor);
     }
       
       #output {
         height:calc(90% - 3px);
-        width:calc(var(--longways) - var(--shortways));
+        max-height:100%-20px;
+        width:100%;
         border-bottom:1px solid var(--textcolor);
         resize:none;
         overflow-y:scroll;
@@ -123,24 +126,30 @@ html {
         color:var(--textcolor);
       }
       
-      #input {
-        height:10%; 
-        width:calc(100% - 27vh);
-        padding-top:2.5vh;
-        padding-left:7vh;
-        font-size: 5vh;
+      #bottomBar {
+        height:10%;
+        width:100%;
       }
       
-      #reset {
-        height:calc(10% - 2.5vh);
-        width:20vh;
-        padding-top:2.5vh;
-        text-align:center;
-        font-size:5vh;
-      }
+        #input {
+          height:calc(100% - 2.5vh); 
+          width:calc(100% - 27vh);
+          min-height:20px;
+          padding-top:2.5vh;
+          padding-left:7vh;
+          font-size: 5vh;
+        }
+        
+        #reset {
+          height:calc(100% - 2.5vh);
+          width:20vh;
+          padding-top:2.5vh;
+          text-align:center;
+          font-size:5vh;
+        }
       
       #hamburger {
-        height:calc(var(--shortways) - 10px);
+        height:calc(100vh - 10px);
         width:var(--hamburgerwidth);
         padding-top:8px;
         position:absolute;
@@ -197,7 +206,7 @@ html {
         height:80vh;
         font-size:20px;
         width:86vh;
-        overflow:scroll;
+        overflow-y:scroll;
         padding:7vh;
         padding-top:10px;
         background-color:var(--color1);
@@ -211,6 +220,7 @@ html {
         .versionChanges {
           width:100%;
           padding-left:5vh;
+          overflow:wrap;
         }
         
         .dropdownHeader {

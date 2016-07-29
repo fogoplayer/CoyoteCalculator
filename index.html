@@ -5,7 +5,7 @@
       <link rel = "stylesheet" type = "text/css" href = "main.css">
       <link rel="icon" type="image/png" href= "images/howl.png">
       <!--JQuery-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="scripts/jquery-3.1.0.min.js"></script>
       <!--Material Icons-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
@@ -16,7 +16,7 @@
       <div class = "spacerDiv>"></div>
     </div>
     
-    <div id = "div1">
+    <div id = "div1" class = "div1">
       <button class = "button" id = "openHamburger" onclick = "openHamburger()" >&#8801;</button>
       <button class = "button"></button>
       <button class = "button" onclick = "CE()" >CE</button>
@@ -44,10 +44,12 @@
     </div>
       <div id = "equals" onclick = "execute()">=</div>
     
-    <div id = "div2">
+    <div id = "div2" class = "div2">
       <div id = "output"></div>
-      <div id = "input"></div>
+      <div id = "bottomBar">
+        <div id = "input"></div>
       <div id = "reset" onclick = "reset()">RESET</div>
+      </div>
     </div>
     
     <div id = "hamburger">
