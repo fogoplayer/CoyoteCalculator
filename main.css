@@ -66,8 +66,6 @@ html {
     
       #splashImage {
         display:block;
-        height:var(--shortways);
-        width:var(--shortways);
       }
   
     .div1 {
@@ -197,7 +195,6 @@ html {
       } 
       
       .header {
-        width:var(--shortways);
         background-color:var(--textcolor);
         color:var(--color1);
       }
@@ -294,4 +291,27 @@ html {
             .white {
               background-color:white;
             }
+@media (width < height) {
+  #splashImage {
+    width:100vh;
+    height:100vh;
+  }
+  
+  .spacerDiv {
+    width:calc((100vw - 100vh) /2);
+    height:100%;
+  }
+  
+    .div1 {
+      width:100vh;
+    }
+  
+  .header {
+    width:100vh;
+  }
+}
+
+@media (width > height) {
+  
+}
 /*This commnent exists solely to prevent ACE's "..." bug*/
