@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html id = "html">
   <head>
-      <title>Coyote Calculator</title>
-      <link rel = "stylesheet" type = "text/css" href = "main.css">
-      <link rel="icon" type="image/png" href= "images/howl.png">
-      <!--JQuery-->
-      <script src="scripts/jquery-3.1.0.min.js"></script>
-      <!--Material Icons-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
+    <title>Coyote Calculator</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" type = "text/css" href = "main.css">
+    <link rel="icon" type="image/png" href= "images/howl.png">
+    <!--JQuery-->
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <!--Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  
   <body id = "body">
     <div id = "splash">
       <div class = "spacerDiv" id = "spacerDiv"></div>
@@ -16,11 +19,13 @@
       <div class = "spacerDiv>"></div>
     </div>
     
-    <div id = "div1" class = "div1">
-      <button class = "button" id = "openHamburger" onclick = "openHamburger()" >&#8801;</button>
-      <button class = "button"></button>
+    <div id = "header">
+       <button class = "button" id = "openHamburger" onclick = "openHamburger()" >&#8801;</button>
       <button class = "button" onclick = "CE()" >CE</button>
       <button class = "button" id = "backspace" onclick = "backspace()" ><i class="material-icons backspace">&#xE14A;</i></button>
+    </div>
+    
+    <div id = "div1" class = "div1">
       
       <button class = "button" onclick = "addToEnd('7')" >7</button>
       <button class = "button" onclick = "addToEnd('8')" >8</button>
@@ -42,7 +47,8 @@
       <button class = "button" onclick = "addToEnd(')^(')">&#708;</button>
       <button class = "button" onclick = "addToEnd('-')" >-</button>
     </div>
-      <div id = "equals" onclick = "execute()">=</div>
+    
+    <button id = "equals" class = "button" onclick = "execute()">=</button>
     
     <div id = "div2" class = "div2">
       <div id = "output"></div>

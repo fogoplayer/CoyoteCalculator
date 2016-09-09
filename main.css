@@ -3,7 +3,6 @@
   padding:0px;
   margin:0px;
   border: 0px solid black;
-  float:left;
   font-family:Roboto, sans-serif;
   background-color:inherit;
   color:inherit;
@@ -25,273 +24,34 @@ html {
   --textcolor: gray;
   --shadowColor: gray;
   --hamburgerwidth:320px;
-  --shortways:100vh;
-  --longways:100vw;
-  --remainder: calc(var(--longways) - var(--shortways));
 }
 
-.material-icons {
+body {
+  width:100vh;
+  height:100vh;
 }
 
-  .material-icons.backspace {
-    line-height:20vh;
-    font-size:10vh;
-    margin-left:5vh;
-  }
-
-  body {
-      border:0px;
-      height:100%;
-      width: 100%;
-      background-color:var(--color1);
-      color:var(--textcolor);
-      overflow:hidden;
+  #splash {
+    position:fixed;
+    z-index:100;
+    width:100vh;
+    height:100vh;
+    background-color:white;
   }
   
-    #splash {
-      height:101vh;
-      width:100vw;
-      position:absolute;
-      text-align:center;
-      z-index:10;
-      display:block;
-      background-color:white;
-      opacity:1;
-    }
-    
-      .spacerDiv {
-        width:calc(var(--remainder) /2);
-        height:100%;
-      }
-    
-      #splashImage {
-        display:block;
-      }
+  .button {
+    display:inline-block;
+    text-align:center;
+  }
   
-    .div1 {
-      height:var(--shortways);
-      width:var(--shortways);
-    }
-    
-      .button {
-        height:20%;
-        width: 25%;
-        text-align: center;
-        font-size:16vh;
+  #equals {
+    position:fixed;
+    border-radius:50%;
+    background-color:orange;
+    z-index:10;
+  }
 
-        /*CSS to disable text-selection*/
-        -moz-user-select: -moz-none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
-        user-select: none;
-      }
-
-      #equals {
-        
-        height:12vh;
-        width:12vh;
-        z-index:1;
-        margin-left:94vh;
-        margin-top: 84vh;
-        border-radius:50%;
-        background-color:var(--textcolor);
-        box-shadow: 0px 5px 50px black;
-        
-        position:absolute;
-        text-align:center;
-        font-size:10vh;
-        color:var(--color1);
-      }
-      
-    .div2 {
-      height: 100%;
-      width: var(--remainder);
-      background-color:var(--color2);
-      box-shadow: -10px 0 20px var(--shadowcolor);
-    }
-      
-      #output {
-        height:calc(90% - 3px);
-        max-height:100%-20px;
-        width:100%;
-        border-bottom:1px solid var(--textcolor);
-        resize:none;
-        overflow-y:scroll;
-        
-        text-align:right;
-        font-size:5vh;
-        color:var(--textcolor);
-      }
-      
-      #bottomBar {
-        height:10%;
-        width:100%;
-      }
-      
-        #input {
-          height:calc(100% - 2.5vh); 
-          width:calc(100% - 27vh);
-          min-height:20px;
-          padding-top:2.5vh;
-          padding-left:7vh;
-          font-size: 5vh;
-        }
-        
-        #reset {
-          height:calc(100% - 2.5vh);
-          width:20vh;
-          padding-top:2.5vh;
-          text-align:center;
-          font-size:5vh;
-        }
-      
-      #hamburger {
-        height:calc(100vh - 10px);
-        width:var(--hamburgerwidth);
-        padding-top:8px;
-        position:absolute;
-        margin-left:calc(-1 * (var(--hamburgerwidth) + 60px));
-        z-index:1;
-        background-color:var(--color1);
-        box-shadow: 10px 0 20px var(--shadowcolor);
-        display:block;
-        overflow-y:scroll;
-        transition-property:margin-left;
-        transition-duration:0.5s;
-      }
-        #hamburger.closed{
-          margin-left:0px;
-        }
-        
-        .hamburgerButton {
-          height:48px;
-          width: calc(320px - 40px);
-          padding-left:16px;
-          text-align:left;
-        }
-        
-          .hamburgerIcon {
-            width:24px;
-            height:48px;
-            padding-top:12px;
-          }
-          
-          .hamburgerText {
-            padding-left:calc(72px - 16px - 24px);
-            font-size:14px;
-            line-height:48px;
-          }
-        
-      #overlay {
-        height:100%;
-        width:calc(100vw - 315px);
-        position:absolute;
-        left:315px;
-        z-index:1;
-        opacity:0;
-        background-color:orange;
-        display:none;
-      } 
-      
-      .header {
-        background-color:var(--textcolor);
-        color:var(--color1);
-      }
-      
-      #bodyForNonKeypad {
-        height:80vh;
-        font-size:20px;
-        width:86vh;
-        overflow-y:scroll;
-        padding:7vh;
-        padding-top:10px;
-        background-color:var(--color1);
-      }
-      
-        .versionNumber {
-          width:100%;
-          margin-top:20px;
-        }
-        
-        .versionChanges {
-          width:100%;
-          padding-left:5vh;
-          overflow:wrap;
-        }
-        
-        .dropdownHeader {
-          height:10vh;
-          width:100%;
-          Font-size:5vh;
-          line-height:10vh;
-        }
-        
-        .dropdownTitle {
-          width:76vh;
-        }
-        
-        .dropdownChevron {
-          height:10vh;
-          width:10vh;
-          transition-duration:0.5s;
-        }
-          
-          .dropdownChevron.up {
-            transform:rotate(-180deg);
-          }
-          
-          .material-icons.chevron {
-            font-size: 10vh;
-          }
-          
-        .dropdownContent {
-          height:0px;
-          width:100%;
-          overflow:hidden;
-          transition-property:height;
-          transition-duration:2s;
-        }
-          .dropdownContent.open {
-            height:auto;
-          }
-          
-          .colorPicker {
-            height:8vh;
-            width:8vh;
-            margin-right:2vh;
-            border:0.5px solid black;
-          }
-          
-            .red {
-              background-color:darkred;
-            }
-            
-            .yellow {
-              background-color:yellow;
-            }
-            
-            .blue {
-              background-color:darkblue;
-            }
-            
-            .green {
-              background-color:darkgreen;
-            }
-            
-            .black {
-              background-color:black;
-              border:0.5px solid white;
-            }
-            
-            .gray {
-              background-color:gray;
-            }
-            
-            .white {
-              background-color:white;
-            }
-@media (width < height) {
+@media (orientation: landscape) {
   #splashImage {
     width:100vh;
     height:100vh;
@@ -302,16 +62,69 @@ html {
     height:100%;
   }
   
-    .div1 {
-      width:100vh;
-    }
+  .div1 {
+    width:100vh;
+  }
+  
+  .div2 {
+    width:calc(100vh - 100vw);
+  }
   
   .header {
     width:100vh;
+    height: 20vh;
   }
 }
 
-@media (width > height) {
+@media (orientation: portrait) {
+  #splashImage {
+    width:100vw;
+    height:100vw;
+  }
   
+  .spacerDiv {
+    width:100%;
+    height:calc((100vh - 100vw) / 2);
+  }
+  
+  #div1 {
+    height:calc(100vh - 100vw);
+    width:100vw;
+  }
+  
+    #input {
+      height:calc(100% - 2.5vw); 
+      width:calc(100% - 27vh);
+      min-height:20px;
+      padding-top:2.5vw;
+      padding-left:2.5vw;
+      font-size: 5vw;
+    }
+  
+  #div2 {
+    height:100vw;
+    width:100vw;
+  }
+  
+  .header {
+    width:100vw;
+    height:20vw;
+  }
+  
+  .button {
+    width:24vw;
+    height:20vw;
+    font-size:8vw;
+    line-height:20vw;
+    text-align:center;
+  }
+  
+    #equals {
+      top:calc(100vh - 80vw - 5vw);
+      width:10vw;
+      height:10vw;
+      line-height:10vw;
+      left:70vw;
+    }
 }
 /*This commnent exists solely to prevent ACE's "..." bug*/

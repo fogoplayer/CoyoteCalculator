@@ -20,18 +20,7 @@ var orient = function () {
     console.log("loading");
     loadToDiv1("elements/inputOutput.html");
     loadToDiv2("elements/standardKeypad.html");
-    div1.className = "div2";
-    div2.className = "div1";
-    div1.style.height = "var(--remainder)";
-    div1.style.width = "var(--shortways)";
-    //document.getElementsByClassName("button").style.setProperty("font-size", "16vw");
-    var cols = document.getElementsByClassName('button');
-      for(i=0; i<cols.length; i++) {
-        console.log(i);
-        cols[i].style.fontSize = "1px!important";
-        console.log("2");
-      }
-    console.log(cols);
+    
     //document.getElementById("openHamburger").style.setProperty("color", "orange");
     inputBox.style.setProperty("padding", "2.5vw");
     console.log(2);
