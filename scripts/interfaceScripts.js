@@ -1,40 +1,12 @@
 //Setup
 setTimeout(
   function () {
-    orient();
     closeSplash();
     versionChecker();
     colorSetup();
   }, 2000);
 console.log(document.cookie);
 console.log("Version: " + version);
-
-//Screen orientation
-var orient = function () {
-  if (window.innerWidth < window.innerHeight) {
-  //Portrait
-    console.log("portrait");
-    document.getElementById("spacerDiv").style.width = "0px";
-    setVariable("--shortways", "100vw");
-    setVariable("--longways", "100vh");
-    console.log("loading");
-    loadToDiv1("elements/inputOutput.html");
-    loadToDiv2("elements/standardKeypad.html");
-    
-    //document.getElementById("openHamburger").style.setProperty("color", "orange");
-    inputBox.style.setProperty("padding", "2.5vw");
-    console.log(2);
-  }else{
-  //Landscape
-    console.log("landscape");
-    document.getElementById("spacerDiv").style.width = "var(--remainder) /2";
-    setVariable("--shortways", "100vh");
-    setVariable("--longways", "100vw");
-    
-    loadToDiv1("elements/standardKeypad.html");
-    
-  }
-};
 
 //Splash screen
   var closeSplash = function () {
@@ -57,7 +29,6 @@ var hideHamburger = function() {
 
 //Dropdowns
 var openDropdown = function(dropdownId) {
-  console.log("Opening dropdown");
   document.getElementById(dropdownId + "Chevron").className = "dropdownChevron up";
   document.getElementById(dropdownId + "Content").className = "dropdownContent open";
   document.getElementById(dropdownId + "Header").onclick = function() {
@@ -66,7 +37,6 @@ var openDropdown = function(dropdownId) {
 };
 
 var closeDropdown = function(dropdownId) {
-  console.log("Closing dropdown");
   document.getElementById(dropdownId + "Chevron").className = "dropdownChevron down";
   document.getElementById(dropdownId + "Content").className = "dropdownContent closed";
   document.getElementById(dropdownId + "Header").onclick = function() {
@@ -148,7 +118,6 @@ var print = function (){
 };
 
 var setVariable = function (variable, value) {
-  console.log("writing Cookie");
   document.getElementById("html").style.setProperty(variable, value);
       writeCookie(variable,value);
 };
@@ -169,6 +138,7 @@ var findCookie = function (name) {
     }
   }
   cookieValue = docCookie.substring(numberStart, numberEnd);
+  console.log(cookieValue);
 };
 
 //Use cookies to check on the version
@@ -198,16 +168,13 @@ var versionChecker = function () {
 var colorSetup = function() {
   findCookie("--color1");
   if (cookieValue.length > 20) {
-    console.log("no color1");
     writeCookie("--color1", "white");
   }
   findCookie("--color1");
   setVariable("--color1", cookieValue);
   
   findCookie("--color2");
-  console.log(cookieValue);
   if (cookieValue.length > 20) {
-    console.log("no color2");
     writeCookie("--color2", "darkblue");
   }
   findCookie("--color2");
@@ -215,19 +182,9 @@ var colorSetup = function() {
   
   findCookie("--textcolor");
   if (cookieValue.length > 20) {
-    console.log("no textcolor");
     writeCookie("--textcolor", "gray");
   }
   findCookie("--textcolor");
   setVariable("--textcolor", cookieValue);
-  
-  findCookie("--shadowcolor");
-  if (cookieValue.length > 20) {
-    console.log("no shadowcolor");
-    writeCookie("--shadowcolor", "gray");
-  }
-  findCookie("--shadowcolor");
-  setVariable("--shadowcolor", cookieValue);
-  
 };
 /*This commnent exists solely to prevent ACE's "..." bug*/

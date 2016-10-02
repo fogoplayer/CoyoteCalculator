@@ -22,109 +22,422 @@ html {
   --color1: white;
   --color2: darkblue;
   --textcolor: gray;
-  --shadowColor: gray;
   --hamburgerwidth:320px;
 }
 
 body {
-  width:100vh;
   height:100vh;
+  width:100vw;
 }
 
-  #splash {
+  #splash{
     position:fixed;
-    z-index:100;
-    width:100vh;
+    z-index:1000;
+    opacity:1;
+    width:100vw;
     height:100vh;
     background-color:white;
   }
   
-  .button {
-    display:inline-block;
-    text-align:center;
+  header {
+    background-color:var(--textcolor);
+    color:var(--color1);
   }
   
+  #div1 {
+    color:var(--textcolor);
+    background-color:var(--color1);
+  }
+  
+  #div2 {
+    color:var(--textcolor);
+    background-color:var(--color2);
+  }
+  
+    #output {
+    }
+    
+    #input {
+      overflow-x:scroll;
+      overflow-y:hidden;
+    }
+    
   #equals {
     position:fixed;
-    border-radius:50%;
-    background-color:orange;
-    z-index:10;
+    z-index:1;
   }
+  
+  #hamburger {
+    top:0;
+    height:100vh;
+    width:var(--hamburgerwidth);
+    padding-top:8px;
+    position:fixed;
+    margin-left:calc(-1 * (var(--hamburgerwidth) + 60px));
+    z-index:10;
+    background-color:var(--color1);
+    box-shadow: 8px 0 8px gray;
+    display:block;
+    overflow-y:scroll;
+    transition-property:margin-left;
+    transition-duration:0.5s;
+  }
+    #hamburger.closed{
+      margin-left:0px;
+    }
+    
+    .hamburgerButton {
+      height:48px;
+      width: calc(320px - 40px);
+      padding-left:16px;
+      text-align:left;
+      display:inline-block;
+    }
+    
+      .hamburgerIcon {
+        float:left;
+        
+        width:24px;
+        height:48px;
+        line-height:48px;
+      }
+      
+        .hamIcon.material-icons {
+          line-height:48px;
+          position:fixed;
+        }
+      
+      .hamburgerText {
+        float:left;
+        
+        padding-left:calc(72px - 16px - 24px);
+        font-size:14px;
+        line-height:48px;
+      }
+    
+  #overlay {
+    height:100%;
+    width:calc(100vw - 315px);
+    position:absolute;
+    left:315px;
+    z-index:1;
+    opacity:0;
+    background-color:orange;
+    display:none;
+  }
+  
+  #bodyForNonKeypad {
+    overflow-y:scroll;
+  }
+  
+  .dropdownHeader {
+    height:48px;
+    width:100%;
+  }
+  
+    .dropdownTitle {
+      height:48px;
+      width:calc(100% - 48px);
+      float:left;
+      display:block;
+      
+      font-size:24px;
+      line-height:48px;
+    }
+    
+    .dropdownChevron {
+      width:48px;
+      height:48px;
+      float:left;
+      display:block;
+      border-radius:50%;
+      transition-duration:0.5s;
+    }
+    
+      .versionNumber {
+        width:100%;
+        margin-top:20px;
+      }
+      
+      .versionChanges {
+        width:100%;
+        padding-left:5vh;
+      }
+      
+      .dropdownChevron.up {
+        transform:rotate(-180deg);
+      }
+      
+      .material-icons.chevron {
+        font-size: 48px;
+        line-height:48px;
+        border-radius: 50%;
+      }
+    
+  .dropdownContent {
+    width:100%;
+    height: 0px;
+    overflow:hidden;
+
+    transition-property:height;
+    transition-duration:2s;
+  }
+  
+    .dropdownContent.closed {
+      height:0px;
+      overflow:hidden;
+    }
+    
+    .dropdownContent.open {
+      height:auto;
+    }
+    
+    .red {
+      background-color:darkred;
+    }
+    
+    .yellow {
+      background-color:yellow;
+    }
+    
+    .blue {
+      background-color:darkblue;
+    }
+    
+    .green {
+      background-color:darkgreen;
+    }
+    
+    .black {
+      background-color:black;
+      border:0.5px solid white;
+    }
+    
+    .gray {
+      background-color:gray;
+    }
+    
+    .white {
+      background-color:white;
+    }
+    
+@media (orientation: portrait) {
+  .spacerDiv {
+    width:100vw;
+    height:calc(50vh - 50vw);
+  }
+  
+  #splashImage {
+    width:100vw;
+    height:100vw;
+  }
+  
+  header {
+    width:100vw;
+    height:20vw;
+    z-index:1;
+    background-color:var(--color2);
+    color:var(--textcolor);
+  }
+  
+  #div2 {
+    position:fixed;
+    top:20vw;
+    
+    height:calc(100vh - 100vw);
+    width:100vw;
+    background-color:var(--color2);
+    box-shadow:0px 4px 4px gray;
+  }
+  
+    #output {
+      height: calc(100% - 15vw - 1px);
+      border-bottom:1px solid var(--textcolor);
+      padding-left:7vw;
+      padding-right:7vw;
+      overflow:scroll;
+      font-size:5.5vw;
+      text-align:right;
+    }
+    
+    #reset {
+      height:15vw;
+      width:calc(25vw - 7.5vw);
+      line-height:15vw;
+      font-size:5.5vw;
+      text-align:center;
+      float:left;
+      padding-left:7vw;
+    }
+    
+    #input {
+      height:15vw;
+      width:calc(100% - 25vw - 10vw /*left padding*/ - 7vw /*right padding*/);
+      float:left;
+      line-height:15vw;
+      font-size:5.5vw;
+      padding-left:10vw;
+      padding-right:7vw;
+      overflow-x:scroll;
+    }
+    
+  #div1 {
+    position:fixed;
+    bottom:0vw;
+    
+    height:80vw;
+    width:100vw;
+  }
+  
+  #bodyForNonKeypad {
+    height:calc(100% - 8vw);
+    width:calc(100% - 8vw);
+    padding:4vw;
+  }
+  
+    .colorPicker {
+      height:11vw;
+      width:11vw;
+      margin:1vw;
+      border:0.5px solid black;
+    }
+  
+  button{
+    height:20vw;
+    width:25vw;
+    float:left;
+    font-size:10vw;
+    line-height:20vw;
+  }
+  
+    #equals {
+      left:calc(75vw - 15vw / 2);
+      bottom:calc(80vw - 7.5vw);
+      
+      border-radius: 50%;
+      background-color:var(--textcolor);
+      color:var(--color1);
+      width:15vw;
+      height:15vw;
+      line-height:15vw;
+      box-shadow:0px 8px 4px lightgray;
+    }
+    
+    .material-icons.backspace {
+      font-size: 10vw;
+      line-height:20vw;
+    }
+}
 
 @media (orientation: landscape) {
+  .spacerDiv {
+    float:left;
+    width:calc(50vw - 50vh);
+    height:100vh;
+  }
+  
   #splashImage {
+    float:left;
     width:100vh;
     height:100vh;
   }
   
-  .spacerDiv {
-    width:calc((100vw - 100vh) /2);
-    height:100%;
-  }
-  
-  .div1 {
+  header {
     width:100vh;
+    height:20vh;
+    z-index:1;
+    background-color:var(--textcolor);
+    color:var(--color1);
   }
   
-  .div2 {
-    width:calc(100vh - 100vw);
-  }
-  
-  .header {
-    width:100vh;
-    height: 20vh;
-  }
-}
-
-@media (orientation: portrait) {
-  #splashImage {
-    width:100vw;
-    height:100vw;
-  }
-  
-  .spacerDiv {
-    width:100%;
-    height:calc((100vh - 100vw) / 2);
-  }
-  
+    
   #div1 {
-    height:calc(100vh - 100vw);
-    width:100vw;
+    position:fixed;
+    bottom:0vw;
+    
+    height:80vh;
+    width:100vh;
   }
   
-    #input {
-      height:calc(100% - 2.5vw); 
-      width:calc(100% - 27vh);
-      min-height:20px;
-      padding-top:2.5vw;
-      padding-left:2.5vw;
-      font-size: 5vw;
+  #bodyForNonKeypad {
+    height:calc(100% - 8vh);
+    width:calc(100% - 8vh);
+    padding:4vh;
+  }
+  
+    .colorPicker {
+      height:11vh;
+      width:11vh;
+      margin:1vh;
+      border:0.5px solid black;
     }
   
   #div2 {
-    height:100vw;
-    width:100vw;
+    position:fixed;
+    right:0;
+    top:0;
+    
+    height:100vh;
+    width:calc(100vw - 100vh);
+    background-color:var(--color2);
+    box-shadow:-8px 0px 8px gray;
   }
   
-  .header {
-    width:100vw;
-    height:20vw;
-  }
+    #output {
+      font-size:5vh;
+      padding:2.5vh;
+      height: calc(100% - 5vh - 10vh - 1px);
+      border-bottom:1px solid var(--textcolor);
+      overflow-y:scroll;
+      padding-left:7.5vh;
+      text-align:right;
+    }
+    
+    #reset {
+      height:10vh;
+      width:auto;
+      line-height:5vh;
+      font-size:5vh;
+      text-align:right;
+      padding:2.5vh;
+      float:left;
+    }
+    
+    #input {
+      height:10vh;
+      width:calc(100% - 20vh - 12.5vh /*padding*/ - 1px);
+      float:left;
+      line-height:5vh;
+      font-size:5vh;
+      padding:2.5vh;
+      padding-left:7.5vh;
+    }
   
-  .button {
-    width:24vw;
-    height:20vw;
-    font-size:8vw;
-    line-height:20vw;
-    text-align:center;
+  button{
+    height:20vh;
+    width:25vh;
+    float:left;
+    font-size:10vh;
+    line-height:20vh;
   }
   
     #equals {
-      top:calc(100vh - 80vw - 5vw);
-      width:10vw;
-      height:10vw;
-      line-height:10vw;
-      left:70vw;
+      left:calc(100vh - 15vh / 2);
+      bottom:calc(10vh - 15vh / 2);
+      
+      border-radius: 50%;
+      background-color:var(--textcolor);
+      color:var(--color1);
+      width:15vh;
+      height:15vh;
+      line-height:15vh;
+      border:1px solid #666666;
+      box-shadow:0px 0px 8px 8px rgba(50,50,50,.5);;
+    }
+    
+    .material-icons.backspace {
+      font-size: 10vh;
+      line-height:20vh;
     }
 }
 /*This commnent exists solely to prevent ACE's "..." bug*/
