@@ -1,5 +1,5 @@
 //Variables
-var version = "web.5.0.0";
+var version = "web.5.1.0";
 var div1 = document.getElementById("div1");
 var div2 = document.getElementById("div2");
 var inputBox = document.getElementById("input");
