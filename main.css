@@ -126,10 +126,11 @@ body {
       }
     
   #overlay {
-    height:100%;
-    width:calc(100vw - 315px);
-    position:absolute;
-    left:315px;
+    height:100vh;
+    width:calc(100vw - 280px);
+    position:fixed;
+    top:0;
+    left:280px;
     z-index:1;
     opacity:0;
     background-color:orange;
