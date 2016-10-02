@@ -405,7 +405,7 @@ body {
     
     #input {
       height:10vh;
-      width:calc(100% - 20vh - 12.5vh /*padding*/ - 1px);
+      width:calc(100% - 18vh - 12.5vh /*padding*/ - 1px);
       float:left;
       line-height:5vh;
       font-size:5vh;
