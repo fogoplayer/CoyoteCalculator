@@ -4,6 +4,7 @@ body.addEventListener("keypress",
       //Execute on Enter or equals sign
       case 13:
           equals.click();
+          equalsCount = false;
         break;
         
       case 61:
@@ -12,6 +13,7 @@ body.addEventListener("keypress",
           equalsCount = false;
         }else if (input.indicator === "algebra" && equalsCount === true) {
           equals.click();
+          equalsCount = false;
         }else{
           addToEnd("=");
           equalsCount = true;
@@ -87,7 +89,19 @@ body.addEventListener("keypress",
         
         //^
         case 94:
-          addToEnd("/");
+          addToEnd("^");
+          break;
+          
+        case 121:
+          addToEnd("y");
+          break;
+          
+        case 120:
+          addToEnd("x");
+          break;
+        
+        case 124:
+          addToEnd("|");
           break;
       
       //Functions
@@ -95,17 +109,20 @@ body.addEventListener("keypress",
         case 99:
           CE();
           break;
-          
         case 114:
           reset();
           break;
           
+        case 8:
+          backspace();
+          break;
+          
       //Modes
-        case 104:
+        case 72:
           loadToDiv1("elements/help.html");
           break;
           
-        case 115:
+        case 82:
           loadToDiv1("elements/settings.html");
           break;
         
@@ -118,15 +135,15 @@ body.addEventListener("keypress",
           break;
           
         case 102:
-          input.indicator = "factor";
+          addIndicator("factor");
           break;
           
-        case 114:
-          input.indicator = "simplifyRadical";
+        case 115:
+          addIndicator("simplifyRadical");
           break;
           
         case 97:
-          input.indicator = "algebra";
+          addIndicator("algebra");
           break;
           
       default:

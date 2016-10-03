@@ -65,6 +65,7 @@ var addToEnd = function(numberSymbol) {
 };
 
 var addIndicator = function(indicator) {
+  output.innerHTML = output.innerHTML + "<br>Switching to " + indicator + " mode";
   input.indicator = indicator;
 };
 

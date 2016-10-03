@@ -97,7 +97,7 @@ var algebra = function(){
     switch (input.input.substring(i,i + 1) ) {
       case "=":
         e = i;
-        break;
+      break;
         
       case "x":
         x.push(i);
@@ -130,8 +130,8 @@ var algebra = function(){
   
   //Determine values of variables all three equations use.
   y = input.input.substring(0,e);
-  a = input.input.substring(e + 1, x[0] - 1);
-    if (a === "") {
+  a = input.input.substring(e + 1, x[0]);
+    if (a === "" || isNaN(a) === true) {
       a = 1;
     }
     a= parseFloat(a);
@@ -152,7 +152,12 @@ var linearAlgebra = function () {
     if (b === "") {
       b = 0;
     }
-  input.output = "x = " +(y-b)/a;
+
+    if (y === "y") {
+      input.output = "x-intercept = (" + (0-b)/a + ",0)";
+    }else{
+      input.output = "x = " +(y-b)/a;
+    }
 };
 
 //Absolute value
@@ -223,7 +228,6 @@ var quadraticAlgebra = function () {
     }
     
     if (y === "y") {
-      console.log("a = " + a + "b = " + b + "c = " + c);
       var o1 = ((b)+Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
       var o2 = (-1*(b)-Math.sqrt(Math.pow(b, 2)- 4 * a * c))/(2 * a);
       if ((Math.pow(b, 2)- (4 * a * c)) < 0) {
