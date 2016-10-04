@@ -50,6 +50,13 @@ var loadToDiv1 = function (elementID) {
   $('#div1').load(elementID, function() {
     hideHamburger();
   });
+  
+  if(elementID === "elements/standardKeypad.html") {
+    flip.setAttribute('onclick', "loadToDiv1('elements/advancedFunctionKeypad.html')");
+  }else{
+    console.log("standard");
+    flip.setAttribute('onclick', "loadToDiv1('elements/standardKeypad.html')");
+  }
 };
 
 var loadToDiv2 = function (elementID) {
